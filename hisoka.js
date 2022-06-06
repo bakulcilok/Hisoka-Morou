@@ -3046,7 +3046,7 @@ let capt = `⭔ Title: ${judul}
                 let btn = [{
                                 urlButton: {
                                     displayText: 'Official Website',
-                                    url: 'https://yanprolandclub/'
+                                    url: 'https://yanprolandclub.com/'
                                 }
                             }, {
                                 callButton: {
