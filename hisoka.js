@@ -1595,12 +1595,12 @@ break
         case 'kontenkolmas': {
                 m.reply(mess.wait)
                 let anu = await fetchJson('https://raw.githubusercontent.com/bakulcilok/kontenkolmas/main/kontenkolmas.json')
-                let chat = anu[Math.floor(Math.chat() * anu.length)]
-                hisoka.sendMessage(m.chat, { image: { url: chat.konten1 }, caption: `Konten 1` }, { quoted: m })
-                hisoka.sendMessage(m.chat, { image: { url: chat.konten2 }, caption: `Konten 2` }, { quoted: m })
-                hisoka.sendMessage(m.chat, { image: { url: chat.konten3 }, caption: `Konten 3` }, { quoted: m })
-                hisoka.sendMessage(m.chat, { image: { url: chat.konten4 }, caption: `Konten 4` }, { quoted: m })
-                hisoka.sendMessage(m.chat, { image: { url: chat.konten5 }, caption: `Konten 5` }, { quoted: m })
+                let image = anu[Math.floor(Math.image() * anu.length)]
+                hisoka.sendMessage(m.chat, { image: { url: image.konten1 }, caption: `Konten 1` }, { quoted: m })
+                hisoka.sendMessage(m.chat, { image: { url: image.konten2 }, caption: `Konten 2` }, { quoted: m })
+                hisoka.sendMessage(m.chat, { image: { url: image.konten3 }, caption: `Konten 3` }, { quoted: m })
+                hisoka.sendMessage(m.chat, { image: { url: image.konten4 }, caption: `Konten 4` }, { quoted: m })
+                hisoka.sendMessage(m.chat, { image: { url: image.konten5 }, caption: `Konten 5` }, { quoted: m })
             }
 	    break
             case 'coffe': case 'kopi': {
