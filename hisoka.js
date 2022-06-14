@@ -2592,9 +2592,8 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             if (!text) throw `Example : ${prefix + command} melepas lajang`
             let res = await fetchJson(api('zenz', '/searching/chordlagu', { query: text }, 'apikey'))
             let teks = `⭔ Chord Lagu : ${text}\n\n`
-            for (let i of res.result) {
+            let i = res.result
             teks += `${i.result}\n`
-            }
             m.reply(teks)
             }
             break
