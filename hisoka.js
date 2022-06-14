@@ -1579,7 +1579,7 @@ break
                 hisoka.sendMessage(m.chat, { image: { url: result }, caption: '⭔ Media Url : '+result }, { quoted: m })
             }
             break
-            case 'ahegao': case 'waifu': case 'husbu': case 'neko': case 'shinobu': case 'megumin': case 'waifus': case 'nekos': case 'trap': case 'blowjob': {
+            case 'ahegao': case 'maid': case 'ass': case 'nsfwneko': case 'netorare': case 'megumin': case 'tentacles': case 'sfwneko': case 'pussy': case 'blowjob': {
                 m.reply(mess.wait)
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/api/morensfw/'+command, {}, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m })
             }
@@ -2818,13 +2818,13 @@ let capt = `⭔ Title: ${judul}
 │⭔ ${prefix}puisi
 │⭔ ${prefix}couple
 │⭔ ${prefix}ahegao
-│⭔ ${prefix}waifu
-│⭔ ${prefix}husbu
-│⭔ ${prefix}neko
-│⭔ ${prefix}shinobu
-│⭔ ${prefix}waifus (nsfw)
-│⭔ ${prefix}nekos (nsfw)
-│⭔ ${prefix}trap (nsfw)
+│⭔ ${prefix}maid
+│⭔ ${prefix}ass
+│⭔ ${prefix}nsfwneko
+│⭔ ${prefix}netorare
+│⭔ ${prefix}tentacles
+│⭔ ${prefix}sfwneko
+│⭔ ${prefix}pussy
 │⭔ ${prefix}blowjob (nsfw)
 │
 └───────⭓
