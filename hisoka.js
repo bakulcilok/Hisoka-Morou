@@ -2650,7 +2650,7 @@ let capt = `⭔ Title: Update Gempa Terkini di Indonesia\n\n
             hisoka.sendImage(m.chat, res.result[0].img, capt, m)
             }
             break
-             case 'gempa': {
+             case 'gempa': case 'infogempa': {
             let res = await fetchJson(api('zenz', '/information/bmkg/gempa', {}, 'apikey'))
             let capt = `Update Gempa Terkini di Indonesia\n\n`
             let i = res.result
@@ -2805,6 +2805,7 @@ let capt = `⭔ Title: Update Gempa Terkini di Indonesia\n\n
 │⭔ ${prefix}wattpad
 │⭔ ${prefix}webtoons
 │⭔ ${prefix}drakor
+│⭔ ${prefix}infogempa
 │
 └───────⭓
 
