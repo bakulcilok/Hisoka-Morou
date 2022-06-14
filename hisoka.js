@@ -2654,19 +2654,18 @@ let capt = `⭔ Title: Update Gempa Terkini di Indonesia\n\n
             let res = await fetchJson(api('zenz', '/information/bmkg/gempa', {}, 'apikey'))
             let capt = `Update Gempa Terkini di Indonesia\n\n`
             let i = res.result
-            capt += `⭔ Tanggal : ${tanggal}\n`
-            capt += `⭔ Jam : ${jam}\n`
-            capt += `⭔ Datetime : ${datetime}\n`
-            capt += `⭔ Koordinat : ${coordinates}\n`
-            capt += `⭔ Lintang : ${lintang}\n`
-            capt += `⭔ Bujur : ${bujur}\n`
-            capt += `⭔ Magnitudo : ${magnitude}\n`
-            capt += `⭔ Kedalaman : ${kedalaman}\n`
-            capt += `⭔ Wilayah : ${wilayah}\n`
-            capt += `⭔ Potensi : ${potensi}\n`
-            capt += `⭔ Dirasakan : ${dirasakan}\n`
+            capt += `⭔ Tanggal : ${i.tanggal}\n`
+            capt += `⭔ Jam : ${i.jam}\n`
+            capt += `⭔ Datetime : ${i.datetime}\n`
+            capt += `⭔ Koordinat : ${i.coordinates}\n`
+            capt += `⭔ Lintang : ${i.lintang}\n`
+            capt += `⭔ Bujur : ${i.bujur}\n`
+            capt += `⭔ Magnitudo : ${i.magnitude}\n`
+            capt += `⭔ Kedalaman : ${i.kedalaman}\n`
+            capt += `⭔ Wilayah : ${i.wilayah}\n`
+            capt += `⭔ Potensi : ${i.potensi}\n`
+            capt += `⭔ Dirasakan : ${i.dirasakan}\n`
             capt += `⭔ Image Url: ${i.shakemap}\n\n`
-            }
             hisoka.sendImage(m.chat, res.result[0].shakemap, capt, m)
             }
             break
