@@ -2593,8 +2593,8 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             let res = await fetchJson(api('zenz', '/searching/chordlagu', { query: text }, 'apikey'))
             let teks = `⭔ Chord Lagu : ${text}\n\n`
             let i = res.result
-            teks += `${i.result}`
-            m.reply(result)
+            teks += `${i}`
+            m.reply(text)
             }
             break
             case 'gsmarena': {
