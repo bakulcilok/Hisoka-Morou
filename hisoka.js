@@ -2588,6 +2588,16 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             m.reply(teks)
             }
             break
+            case 'chordlagu': {
+            if (!text) throw `Example : ${prefix + command} melepas lajang`
+            let res = await fetchJson(api('zenz', '/searching/chordlagu', { query: text }, 'apikey'))
+            let teks = `⭔ Chord Lagu : ${text}\n\n`
+            for (let i of res.result) {
+            teks += `${i.result}\n`
+            }
+            m.reply(teks)
+            }
+            break
             case 'gsmarena': {
             if (!text) throw `Example : ${prefix + command} samsung`
             let res = await fetchJson(api('zenz', '/webzone/gsmarena', { query: text }, 'apikey'))
