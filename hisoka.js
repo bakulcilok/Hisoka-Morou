@@ -2651,7 +2651,7 @@ let capt = `⭔ Title: Update Gempa Terkini di Indonesia\n\n
             }
             break
              case 'gempa': {
-            let res = await fetchJson(api('zenz', '/information/bmkg', {}, 'apikey'))
+            let res = await fetchJson(api('zenz', '/information/bmkg/gempa', {}, 'apikey'))
             let capt = `Update Gempa Terkini di Indonesia\n\n`
             for (let i of res.result){
             capt += `⭔ Tanggal : ${tanggal}\n`
