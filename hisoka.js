@@ -2610,7 +2610,6 @@ let capt = `⭔ Title: ${judul}
             }
             break
             case 'gempa': {
-            if (!text) throw `Example : ${prefix + command} infogempa`
             let res = await fetchJson(api('zenz', '/information/bmkg/', { query: text }, 'apikey'))
             let { tanggal, jam, datetime, coordinates, lintang, bujur, magnitude, kedalaman, wilayah, potensi, dirasakan, shakemap } = res.result
 let capt = `⭔ Title: Update Gempa Terkini di Indonesia\n\n
