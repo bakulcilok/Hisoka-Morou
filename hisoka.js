@@ -2665,7 +2665,7 @@ let capt = `⭔ Title: Update Gempa Terkini di Indonesia\n\n
             capt += `⭔ Wilayah : ${wilayah}\n`
             capt += `⭔ Potensi : ${potensi}\n`
             capt += `⭔ Dirasakan : ${dirasakan}\n`
-            capt += `⭔ Image Url: ${shakemap}\n\n`
+            capt += `⭔ Image Url: ${i.shakemap}\n\n`
             }
             hisoka.sendImage(m.chat, res.result[0].shakemap, capt, m)
             }
