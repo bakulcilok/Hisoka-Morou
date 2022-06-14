@@ -2653,7 +2653,7 @@ let capt = `⭔ Title: Update Gempa Terkini di Indonesia\n\n
              case 'gempa': {
             let res = await fetchJson(api('zenz', '/information/bmkg/gempa', {}, 'apikey'))
             let capt = `Update Gempa Terkini di Indonesia\n\n`
-            for (let i of res.result){
+            let i { tanggal, jam, datetime, coordinates, lintang, bujur, magnitude, kedalaman, wilayah, potensi, dirasakan, shakemap } = res.result
             capt += `⭔ Tanggal : ${tanggal}\n`
             capt += `⭔ Jam : ${jam}\n`
             capt += `⭔ Datetime : ${datetime}\n`
