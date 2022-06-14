@@ -2609,7 +2609,7 @@ let capt = `⭔ Title: ${judul}
             hisoka.sendImage(m.chat, thumb, capt, m)
             }
             break
-            case 'gempa': {
+            case 'ggg': {
             let res = await fetchJson(api('zenz', '/information/bmkg/', {}, 'apikey'))
             let { tanggal, jam, datetime, coordinates, lintang, bujur, magnitude, kedalaman, wilayah, potensi, dirasakan, shakemap } = res.result
 let capt = `⭔ Title: Update Gempa Terkini di Indonesia\n\n
@@ -2648,6 +2648,26 @@ let capt = `⭔ Title: Update Gempa Terkini di Indonesia\n\n
             capt += `⭔ Img Url: ${i.img}\n\n──────────────────────\n`
             }
             hisoka.sendImage(m.chat, res.result[0].img, capt, m)
+            }
+            break
+             case 'gempa': {
+            let res = await fetchJson(api('zenz', '/information/bmkg', {}, 'apikey'))
+            let capt = `Update Gempa Terkini di Indonesia\n\n`
+            for (let i of res.result){
+            capt += `⭔ Tanggal : ${tanggal}\n`
+            capt += `⭔ Jam : ${jam}\n`
+            capt += `⭔ Datetime : ${datetime}\n`
+            capt += `⭔ Koordinat : ${coordinates}\n`
+            capt += `⭔ Lintang : ${lintang}\n`
+            capt += `⭔ Bujur : ${bujur}\n`
+            capt += `⭔ Magnitudo : ${magnitude}\n`
+            capt += `⭔ Kedalaman : ${kedalaman}\n`
+            capt += `⭔ Wilayah : ${wilayah}\n`
+            capt += `⭔ Potensi : ${potensi}\n`
+            capt += `⭔ Dirasakan : ${dirasakan}\n`
+            capt += `⭔ Image Url: ${shakemap}\n\n`
+            }
+            hisoka.sendImage(m.chat, res.result[0].shakemap, capt, m)
             }
             break
             case 'aminio': {
