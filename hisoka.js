@@ -2666,7 +2666,7 @@ let capt = `⭔ Title: Update Gempa Terkini di Indonesia\n\n
             capt += `⭔ Potensi : ${i.potensi}\n`
             capt += `⭔ Dirasakan : ${i.dirasakan}\n`
             capt += `⭔ Image Url: ${i.shakemap}\n\n`
-            hisoka.sendImage(m.chat, res.result[0].shakemap, capt, m)
+            hisoka.sendImage(m.chat, res.result.shakemap, capt, m)
             }
             break
             case 'aminio': {
