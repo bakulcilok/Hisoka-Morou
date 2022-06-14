@@ -2594,7 +2594,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             let teks = `⭔ Chord Lagu : ${text}\n\n`
             let i = res.result
             teks += `${i.result}`
-            m.reply(teks)
+            m.reply(result)
             }
             break
             case 'gsmarena': {
