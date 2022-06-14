@@ -1461,7 +1461,7 @@ break
             }
             break
         case 'google': {
-                if (!text) throw `Example : ${prefix + command} fatih arridho`
+                if (!text) throw `Example : ${prefix + command} Bakulcilok`
                 let google = require('google-it')
                 google({'query': text}).then(res => {
                 let teks = `Google Search From : ${text}\n\n`
@@ -2607,6 +2607,25 @@ let capt = `⭔ Title: ${judul}
 ⭔ Battery Brand: ${merek_batre}
 ⭔ Detail: ${detail}`
             hisoka.sendImage(m.chat, thumb, capt, m)
+            }
+            break
+            case 'gempa': {
+            if (!text) throw `Example : ${prefix + command} infogempa`
+            let res = await fetchJson(api('zenz', '/information/bmkg/', { query: text }, 'apikey'))
+            let { tanggal, jam, datetime, coordinates, lintang, bujur, magnitude, kedalaman, wilayah, potensi, dirasakan, shakemap } = res.result
+let capt = `⭔ Title: Update Gempa Terkini di Indonesia\n\n
+⭔ Tanggal : ${tanggal}
+⭔ Jam : ${jam}
+⭔ Datetime : ${datetime}
+⭔ Koordinat : ${coordinates}
+⭔ Lintang : ${lintang}
+⭔ Bujur : ${bujur}
+⭔ Magnitudo : ${magnitude}
+⭔ Kedalaman : ${kedalaman}
+⭔ Wilayah : ${wilayah}
+⭔ Potensi : ${potensi}
+⭔ Dirasakan : ${dirasakan}`
+            hisoka.sendImage(m.chat, shakemap, capt, m)
             }
             break
             case 'jadwalbioskop': {
