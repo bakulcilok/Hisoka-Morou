@@ -544,7 +544,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             }
             break
             case 'sc': {
-                m.reply('Script : https://github.com/\n\n Dont Forget Give Star\n\nDonate : 6282144572368 (Link Aja)\nSaweria : https://saweria.co/bakulcilok\nPaypal : https://www.paypal.me/\n\n Dont Forget Donate')
+                m.reply('Script : https://github.com/\n\n Dont Forget Give Star\n\nDonate : 082144572368\nDANA/OVO/GOPAY/LINK AJA\nSaweria : https://saweria.co/bakulcilok\nPaypal : https://www.paypal.me/\n\n Dont Forget Donate')
             }
             break
             case 'chat': {
@@ -1147,7 +1147,7 @@ break
                     let btn = [{
                                 urlButton: {
                                     displayText: 'Official Website',
-                                    url: 'https:/yanprolandclub.com/'
+                                    url: 'https://yanprolandclub.com/ylc-program/'
                                 }
                             }, {
                                 callButton: {
@@ -1580,6 +1580,7 @@ break
             }
             break
             case 'ahegao': case 'maid': case 'ass': case 'nsfwneko': case 'netorare': case 'megumin': case 'tentacles': case 'sfwneko': case 'pussy': case 'blowjob': {
+                if (!isCreator) throw mess.owner
                 m.reply(mess.wait)
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/api/morensfw/'+command, {}, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m })
             }
@@ -3100,7 +3101,7 @@ let capt = `⭔ Title: Update Gempa Terkini di Indonesia\n\n
                 let btn = [{
                                 urlButton: {
                                     displayText: 'Official Website',
-                                    url: 'https://yanprolandclub.com/'
+                                    url: 'https://yanprolandclub.com/ylc-program/'
                                 }
                             }, {
                                 callButton: {
