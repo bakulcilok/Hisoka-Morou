@@ -110,7 +110,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
 	    
         // Public & Self
         if (!hisoka.public) {
-            if (!m.key.fromOwner) return
+            if (!m.key.from.owner) return
         }
 
         // Push Message To Console && Auto Read
