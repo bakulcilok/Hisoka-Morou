@@ -1610,6 +1610,11 @@ break
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/randomimage/cogan', {}, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m })
             }
             break
+            case 'memeindo': case 'meme': {
+                m.reply(mess.wait)
+                hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/randomimage/memeindo', {}, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m })
+            }
+            break
 	    case 'couple': {
                 m.reply(mess.wait)
                 let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
@@ -2894,6 +2899,7 @@ let capt = `⭔ Title: Update Gempa Terkini di Indonesia\n\n
 │⭔ ${prefix}darkjoke
 │⭔ ${prefix}cecan
 │⭔ ${prefix}cogan
+│⭔ ${prefix}meme
 │⭔ ${prefix}couple
 │⭔ ${prefix}ahegao
 │⭔ ${prefix}maid
