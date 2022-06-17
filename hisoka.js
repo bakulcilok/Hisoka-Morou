@@ -1972,9 +1972,9 @@ break
                     m.reply(`ID : ${anu.result.gameId}\nUsername : ${anu.result.userName}`)
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'ml') {
-                    if (!id) throw `No Query id, Example : ${prefix + command} ml 214885010 2253`
-                    if (!zone) throw `No Query id, Example : ${prefix + command} ml 214885010 2253`
-                    let anu = await fetchJson(api('zenz', '/api/nickml', { apikey: global.APIKeys[global.APIs['zenz']], query: id, query2: zone }))
+                    if (!id) throw `No Query id, Example : ${prefix + command} ml 991314377 12957`
+                    if (!zone) throw `No Query id, Example : ${prefix + command} ml 991314377 12957`
+                    let anu = await fetchJson(api('zenz', '/stalker/nickml', { apikey: global.APIKeys[global.APIs['zenz']], query: id, query2: zone }))
                     if (anu.status == false) return m.reply(anu.result.message)
                     m.reply(`ID : ${anu.result.gameId}\nZone : ${anu.result.zoneId}\nUsername : ${anu.result.userName}`)
 		    db.data.users[m.sender].limit -= 1
