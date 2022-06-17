@@ -1586,21 +1586,28 @@ break
             }
             break
             case 'wallhp': case 'wallpaperhp': {
-                if (!isCreator) throw mess.owner
                 m.reply(mess.wait)
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/randomimage/wallhp', {}, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m })
             }
             break
             case 'darkjoke': {
-                if (!isCreator) throw mess.owner
                 m.reply(mess.wait)
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/randomimage/darkjoke', {}, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m })
             }
             break
             case 'aesthetic': {
-                if (!isCreator) throw mess.owner
                 m.reply(mess.wait)
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/randomimage/aesthetic', {}, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m })
+            }
+            break
+            case 'cecan': {
+                m.reply(mess.wait)
+                hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/randomimage/cecan', {}, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m })
+            }
+            break
+            case 'cogan': {
+                m.reply(mess.wait)
+                hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/randomimage/cogan', {}, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m })
             }
             break
 	    case 'couple': {
@@ -2885,6 +2892,8 @@ let capt = `⭔ Title: Update Gempa Terkini di Indonesia\n\n
 │⭔ ${prefix}wallpaperhp
 │⭔ ${prefix}aesthetic
 │⭔ ${prefix}darkjoke
+│⭔ ${prefix}cecan
+│⭔ ${prefix}cogan
 │⭔ ${prefix}couple
 │⭔ ${prefix}ahegao
 │⭔ ${prefix}maid
