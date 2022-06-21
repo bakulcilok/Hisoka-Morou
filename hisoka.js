@@ -2049,6 +2049,7 @@ break
             }
             break
 	        case 'tiktok': case 'tiktoknowm': {
+                if (!isCreator) throw mess.owner
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
@@ -2067,6 +2068,7 @@ break
             }
             break
             case 'tiktokwm': case 'tiktokwatermark': {
+                if (!isCreator) throw mess.owner
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
