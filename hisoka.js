@@ -544,7 +544,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             }
             break
             case 'sc': {
-                m.reply('Script : https://github.com/\n\n Dont Forget Give Star\n\nDonate : 082144572368\nDANA/OVO/GOPAY/LINK AJA\nSaweria : https://saweria.co/bakulcilok\nPaypal : https://www.paypal.me/\n\n Dont Forget Donate')
+                m.reply('Script : Contact owner\nwa.me/6282144572368')
             }
             break
             case 'chat': {
@@ -1155,8 +1155,8 @@ break
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'Status Bot',
-                                    id: 'ping'
+                                    displayText: 'Donasi',
+                                    id: 'donasi'
                                 }
                             }, {
                                 quickReplyButton: {
