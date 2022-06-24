@@ -1314,7 +1314,7 @@ break
 	    }
 	    break
 	       case 'attp': case 'ttp': {
-            if (!isCreator) throw mess.premium
+            if (!isPremium) throw mess.premium
            if (!text) throw `Example : ${prefix + command} bakulcilok`
            await hisoka.sendMedia(m.chat, 'zenz', '/creator/ttp/', 'text=${+text}', 'apikey', m, {asSticker: true})
 
