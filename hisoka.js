@@ -1601,6 +1601,7 @@ break
             }
             break
             case 'cecan': {
+                if (!isPremium) throw mess.premium
                 m.reply(mess.wait)
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/randomimage/cecan', {}, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m })
             }
