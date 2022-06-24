@@ -2541,7 +2541,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             break
             case 'self': {
                 if (!isCreator) throw mess.owner
-                hisoka.public = false
+                hisoka.public = false mess.owner
                 m.reply('Sukses Change To Self Usage')
             }
             break
