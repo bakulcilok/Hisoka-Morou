@@ -723,7 +723,6 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             }
             break
             case 'react': {
-                if (!isCreator) throw mess.owner
                 reactionMessage = {
                     react: {
                         text: args[0],
@@ -1315,6 +1314,7 @@ break
 	    }
 	    break
 	       case 'attp': case 'ttp': {
+            if (!isCreator) throw mess.owner
            if (!text) throw `Example : ${prefix + command} bakulcilok`
            await hisoka.sendMedia(m.chat, 'zenz', '/creator/ttp/', 'text=${+text}', 'apikey', m, {asSticker: true})
 
