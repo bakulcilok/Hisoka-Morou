@@ -1184,18 +1184,18 @@ break
 		    await sleep(1500)
 		    let btn = [{
                                 urlButton: {
-                                    displayText: 'Source Code',
-                                    url: 'https://github.com/DikaArdnt/Hisoka-Morou'
+                                    displayText: 'Official Website',
+                                    url: 'https://yanprolandclub.com/ylc-program/'
                                 }
                             }, {
                                 callButton: {
                                     displayText: 'Number Phone Owner',
-                                    phoneNumber: '+62 882-9202-4190'
+                                    phoneNumber: '+62 821-4457-2368'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'Status Bot',
-                                    id: 'ping'
+                                    displayText: 'Donasi',
+                                    id: 'donasi'
                                 }
                             }, {
                                 quickReplyButton: {
@@ -3154,8 +3154,8 @@ let capt = `⭔ Title: Update Gempa Terkini di Indonesia\n\n
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'Status Bot',
-                                    id: 'ping'
+                                    displayText: 'Donasi',
+                                    id: 'donasi'
                                 }
                             }, {
                                 quickReplyButton: {
