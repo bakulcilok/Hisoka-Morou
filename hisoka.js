@@ -2817,7 +2817,7 @@ let capt = `➣ Title: Update Gempa Terkini di Indonesia\n\n
             }
             break
             case 'list': case 'menu': case 'help': case '?': {
-                anu = `┌──⭓ *Group Menu*
+                anu = `*Hai Kak ${m.pushName}👋🏻*\nBerikut list menu bot\nGunakan dengan bijak yaaa...\n┌──⭓ *Group Menu*
 │
 │➣ ${prefix}linkgroup
 │➣ ${prefix}ephemeral [option]
