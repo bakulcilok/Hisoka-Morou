@@ -1337,7 +1337,7 @@ break
 	       break     
 	        case 'simih': case 'simisimi': {
             if (!text) throw `Example : ${prefix + command} text`
-            hm = await fetchJson(api('zenz', '/api/simisimi', { text : text }, 'apikey'))
+            hm = await fetchJson(api('zenz', '/entertainment/simisimi', { text : text }, 'apikey'))
             m.reply(hm.result.message)
             }
             break
@@ -1580,7 +1580,7 @@ break
             }
             break
             case 'ahegao': case 'maid': case 'ass': case 'nsfwneko': case 'netorare': case 'megumin': case 'tentacles': case 'sfwneko': case 'pussy': case 'blowjob': {
-                if (!isCreator) throw mess.owner
+                if (!isPremium) throw mess.premium
                 m.reply(mess.wait)
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/api/morensfw/'+command, {}, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m })
             }
@@ -2049,7 +2049,6 @@ break
             }
             break
 	        case 'tiktok': case 'tiktoknowm': {
-                if (!isCreator) throw mess.owner
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
@@ -2167,7 +2166,7 @@ break
             }
             break
 	        case 'fbdl': case 'fb': case 'facebook': {
-                if (!isCreator) throw mess.owner
+                if (!isPremium) throw mess.premium
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/facebook', { url: text }, 'apikey'))
@@ -2917,7 +2916,7 @@ let capt = `⭔ Title: Update Gempa Terkini di Indonesia\n\n
 │⭔ ${prefix}tentacles
 │⭔ ${prefix}sfwneko
 │⭔ ${prefix}pussy
-│⭔ ${prefix}blowjob (nsfw)
+│⭔ ${prefix}blowjob
 │
 └───────⭓
 
