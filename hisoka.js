@@ -2106,8 +2106,8 @@ break
 	        case 'instagram': case 'igdl': case 'igtv': case 'igreel': {
                 if (!isPremium) return global.mess("premium", m)
                 if (!isUrl(text)) return m.reply(`Example: ${prefix + command} url`)
-                let fetch = await fetchJson(global.api("zenz", "/downloader/instagram", { url:isUrl(m.text)[0] }, "apikey"))
-                for (let url of fetch.result) hisoka.sendFile(hisoka m.chat, url, "", m, { caption: `Download Media From : ${isUrl(text)[0]}` })
+                let fetch = await fetchJson(global.api("zenz", "/downloader/instagram", { url:isUrl(text)[0] }, "apikey"))
+                for (let url of fetch.result) hisoka.sendFile(m.chat, url, "", m, { caption: `Download Media From : ${isUrl(text)[0]}` })
             }
             break
             case 'joox': case 'jooxdl': {
