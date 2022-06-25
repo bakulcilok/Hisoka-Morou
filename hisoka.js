@@ -2106,7 +2106,7 @@ break
 	        case 'instagram': case 'igdl': case 'igtv': case 'igreel': {
                 if (!isPremium) return global.mess("premium", m)
                 if (!isUrl(text)) return m.reply(`Example: ${prefix + command} url`)
-                let fetch = await fetchjson(global.api("zenz", "/downloader/instagram", { url:isUrl(text)[0] }, "apikey"))
+                let fetch = await fetchJson(global.api("zenz", "/downloader/instagram", { url:isUrl(text)[0] }, "apikey"))
                 for (let url of fetch.result) sock.sendFile(m.from, url, "", m, { caption: `Download Media From : ${isUrl(text)[0]}` })
             }
             break
