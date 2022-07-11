@@ -1189,8 +1189,8 @@ break */
                                 }
                             }, {
                                 urlButton: {
-                                    displayText: 'Kontak Admin',
-                                    url: 'https://api.whatsapp.com/send?phone=6281222008204'
+                                    displayText: 'Link Zoom',
+                                    url: 'https://zoom.us/j/97725368398?pwd=dGJJT2sydnF5V1FVQ0VVTmZrRG11QT09'
                                 }
                             }, {
                                 quickReplyButton: {
@@ -1199,8 +1199,8 @@ break */
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'Script',
-                                    id: 'sc'
+                                    displayText: 'Tentang Bot',
+                                    id: 'menu'
                                 }  
                             }, {
                                 quickReplyButton: {
