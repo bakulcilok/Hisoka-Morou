@@ -1149,7 +1149,7 @@ break */
                                     url: 'https://yanprolandclub.com/yanpro-reseller/'
                                 }
                             }, {
-                                callButton: {
+                                urlButton: {
                                     displayText: 'Kontak Admin',
                                     url: 'https://api.whatsapp.com/send?phone=6281222008204'
                                 }
@@ -1188,7 +1188,7 @@ break */
                                     url: 'https://yanprolandclub.com/yanpro-reseller/'
                                 }
                             }, {
-                                callButton: {
+                                urlButton: {
                                     displayText: 'Kontak Admin',
                                     url: 'https://api.whatsapp.com/send?phone=6281222008204'
                                 }
@@ -3183,7 +3183,7 @@ let capt = `➣ Title: Update Gempa Terkini di Indonesia\n\n
                                     url: 'https://yanprolandclub.com/yanpro-reseller/'
                                 }
                             }, {
-                                callButton: {
+                                urlButton: {
                                     displayText: 'Kontak Admin',
                                     url: 'https://api.whatsapp.com/send?phone=6281222008204'
                                 }
