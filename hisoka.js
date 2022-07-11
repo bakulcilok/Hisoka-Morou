@@ -548,58 +548,8 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             }
             break
             case 'benefit': {
-                hisoka.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/16b58c911307c3d1e993b.png' }, caption: `‼️ 7 Alasan mengapa anda harus bergabung di YLC Yanpro Land Club\n\n
-
-                1️⃣ Nyaris Tanpa Modal, Minim Banget dibandingkan Modal Buka Usaha/wirausaha bahkan Kursus diluaran sana yang rata rata harus mengeluarkan Modal
-                1 s/d 5 jutaan bahkan ada yang puluhan juta 😣\n\n
-                
-                Bayangkan di YLC Modalnya anda serius Belajar dan yg terpenting praktek saja dan jualan nya dibimbing/disupport oleh tim ✊
-                
-                2️⃣ Komisi Besar, Profit per closingan nya mulai dari 2juta sampai 15jutaan.
-                
-                Ya komisi yang akan anda dapat per penjualan bisa mencapai puluhan juta setiap kali terjadi Transaksi Penjualan, anggap saja dalam 1 bulan anda mampu closing 1unit saja sudah bisa setara dengan gaji supervisor bahkan manager 🤩😍
-                
-                3️⃣ Tanpa harus pusing mikirin materi promosi , Tanpa Ribet. Udah, tenang aja. Anda gak perlu :
-                
-                🚫 Mikir keras gimana caranya Bikin Materi Promosi atau iklan di media cetak ataupun digital 
-                
-                🚫 Sibuk mikirin cara buat konten dan cara cara jualan via online/digital marketing nya
-                Biar kami yang buatkan itu semua,,
-                Tugas Anda cuma 2 saja yaitu : Edukasi calon pelanggan anda sebanyak-banyaknya & Promosi/jual produk yang nantinya full disupport oleh kami cara-cara dari A Sampai Z nya,,Anda tinggal Copy Paste saja ✅
-                Enak Bangeut 🤤
-                
-                4️⃣ Profesi Sambilan, Tanpa Ganggu Kerjaan Utama.
-                Apapun profesi Anda sekarang, entah mahasiswa, Pekerja kantoran, pegawai swasta, pedagang, pengusaha UMKM bahkan ibu-ibu rumah tangga, apalagi pengacara (pengangguran kehabisan cara) InsyaAllah tugas utama gak akan keganggu.👌
-                
-                Kenapa?? Karena jualannya bisa dijadikan sebagai sambilan.
-                Santai aja. Slow but sure alias pelan tapi pasti no php kaya mantan 🤪😊
-                
-                5️⃣ Jejaring market Luas, se-Indonesia 🌐 ya karna yang namanya digital marketing atau dengan internet kita bisa menjangkau seluruh market lokal maupun luar negeri hanya dengan via internet 😎
-                Selain itu,,
-                Anda bakal kenalan dengan member khusus di grup nantinya.
-                Bisa jadi, disana ada partner bisnis Anda, atau bagi anda yg masih single tidak menutup kemungkinan ada partner hidup Anda disana. Cieee.... 🥰
-                
-                 6️⃣ Full Support, Habis-Habisan. ‼️
-                Gak perlu bingung buat desain promosi, karena Sudah kami sediakan 🤩
-                Gak perlu pusing mikirin kata-kata promosi/copywriting, karna sudah kami sediakan juga ❗
-                Enak, kan 😌 
-                
-                Pokoknya full support 💯%, habis-habisan, tinggal copy paste ,, kalau kurang kita support cara beriklan & cara dapatkan pelanggan baru yg menghasilkan,, 🥰
-                
-                7️⃣ Dibimbing oleh Tim yang Sudah teruji dan terdidik secara Profesional bahkan Expert  😊🙏
-                
-                Ya, InsyaAllah orang yang akan men-support Anda adalah para talent yang sudah terdidik ,,terlatih yang sudah teruji dan terbukti menghasilkan bahkan kedepan para expert pun akan men-support ke depannya dibersamai para praktisi yang sudah berhasil dibidangnya yang nantinya akan diundang untuk bocorin rahasia sukses nya mendapatkan hasil diatas rata rata 
-                (bocoran nya: profit komisi dari jualan properti nya  sudah diatas 20juta/bulan) 🫠
-                
-                Jadi gak perlu khawatir karna kita sudah sudah melalui uji market & trial error sehingga program ini 💯% 
-                ‼️ ANTI RUGI, ya Jelas gak rugi karna DAFTARNYA GRATISS dimana ruginya 😅
-                
-                Beruntung untuk anda yang sudah bergabung sekarang karna kedepan nya bagi yang mau menjadi member atau Marketing Freelance YanproLand Club Tidak Gratis Lagi 🙅‍♂️
-                . 
-                Banyak tim kami yang akan membersamai Anda selama program tersebut berlangsung selama anda serius belajar dan konsisten prakteknya saya yakin anda bisa mencapai hasil maksimal bahkan tidak menutup kemungkinan bisa lebih berhasil dari kami
-                Maka dari itulah saya batasi program ini maksimal hanya Untuk 200 orang saja agar hasilnya maksimal 📈
-                
-                ✍🏻 Ketika Anda memutuskan bergabung di tim YLC selain mendapat keuntungan di atas, Anda pun akan mendapatkan Grup Mentoring & Free Coaching bersama kami selama masa pembinaan` }, { quoted: m })
+                hisoka.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/16b58c911307c3d1e993b.png' }, caption: `‼️ 7 Alasan mengapa anda harus bergabung di YLC (YanproLand Club)\n\n1️⃣ Nyaris Tanpa Modal,, Minim Banget dibandingkan Modal Buka Usaha/wirausaha bahkan Kursus diluaran sana yang rata rata harus mengeluarkan Modal 1 s/d 5 jutaan bahkan ada yang puluhan juta 😣\n2️⃣ Komisi Besar, Profit per closingan nya mulai dari 2juta sampai 15jutaan.\n3️⃣ Tanpa harus pusing mikirin materi promosi , Tanpa Ribet. Udah.\n4️⃣ Profesi Sambilan, Tanpa Ganggu Kerjaan Utama.\n5️⃣ Jejaring market Luas, se-Indonesia 🌐\n6️⃣ Full Support, Habis-Habisan. ‼️\n
+                7️⃣ Dibimbing oleh Tim yang Sudah teruji dan terdidik secara Profesional bahkan Expert  😊🙏\n\n✍🏻 Ketika Anda memutuskan bergabung di tim YLC selain mendapat keuntungan di atas, Anda pun akan mendapatkan Grup Mentoring & Free Coaching bersama kami selama masa pembinaan.\n\n‼️ DAFTAR GRATIS SEKARANG SEBELUM PROGRAM INI DITUTUP\nDAFTAR DISINI\n👇👇👇\nhttp://bit.ly/ylc-member\nhttp://bit.ly/ylc-member\nhttp://bit.ly/ylc-member` }, { quoted: m })
             }
             break
             case 'chat': {
