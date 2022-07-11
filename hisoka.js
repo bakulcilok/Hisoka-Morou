@@ -2416,7 +2416,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 		m.reply(`Berhasil menghapus '${text}' dari list pesan`)
             }
 	    break
-	    /** case 'anonymous': {
+	    case 'anonymous': {
                 if (m.isGroup) return m.reply('Fitur Tidak Dapat Digunakan Untuk Group!')
 				this.anonymous = this.anonymous ? this.anonymous : {}
 				let buttons = [
@@ -2424,8 +2424,8 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 ]
                 hisoka.sendButtonText(m.chat, buttons, `\`\`\`Hi ${await hisoka.getName(m.sender)} Welcome To Anonymous Chat\n\nKlik Button Dibawah Ini Untuk Mencari Partner\`\`\``, hisoka.user.name, m)
             }
-			break */
-            /** case 'keluar': case 'leave': {
+			break
+            case 'keluar': case 'leave': {
                 if (m.isGroup) return m.reply('Fitur Tidak Dapat Digunakan Untuk Group!')
                 this.anonymous = this.anonymous ? this.anonymous : {}
                 let room = Object.values(this.anonymous).find(room => room.check(m.sender))
@@ -2481,9 +2481,9 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                     ]
                     await hisoka.sendButtonText(m.chat, buttons, `\`\`\`Mohon Tunggu Sedang Mencari Partner\`\`\``, hisoka.user.name, m)
                 }
-                break */
+                break
             }
-            /** case 'next': case 'lanjut': {
+            case 'next': case 'lanjut': {
                 if (m.isGroup) return m.reply('Fitur Tidak Dapat Digunakan Untuk Group!')
                 this.anonymous = this.anonymous ? this.anonymous : {}
                 let romeo = Object.values(this.anonymous).find(room => room.check(m.sender))
@@ -2526,8 +2526,8 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                     ]
                     await hisoka.sendButtonText(m.chat, buttons, `\`\`\`Mohon Tunggu Sedang Mencari Partner\`\`\``, hisoka.user.name, m)
                 }
-                break */
-            /**}*/
+                break
+            }
             case 'public': {
                 if (!isCreator) throw mess.owner
                 hisoka.public = true
