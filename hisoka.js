@@ -2417,6 +2417,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             }
 	    break
 	    case 'anonymous': {
+            if (!isCreator) throw mess.owner
                 if (m.isGroup) return m.reply('Fitur Tidak Dapat Digunakan Untuk Group!')
 				this.anonymous = this.anonymous ? this.anonymous : {}
 				let buttons = [
