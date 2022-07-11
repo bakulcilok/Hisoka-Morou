@@ -548,7 +548,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             }
             break
             case 'benefit': {
-                hisoka.sendMessage(m.chat, { caption: `‼️ 7 Alasan mengapa anda harus bergabung di YLC Yanpro Land Club\n\n
+                hisoka.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/16b58c911307c3d1e993b.png' }, caption: `‼️ 7 Alasan mengapa anda harus bergabung di YLC Yanpro Land Club\n\n
 
                 1️⃣ Nyaris Tanpa Modal, Minim Banget dibandingkan Modal Buka Usaha/wirausaha bahkan Kursus diluaran sana yang rata rata harus mengeluarkan Modal
                 1 s/d 5 jutaan bahkan ada yang puluhan juta 😣\n\n
