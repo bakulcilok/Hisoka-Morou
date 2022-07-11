@@ -2527,7 +2527,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                     await hisoka.sendButtonText(m.chat, buttons, `\`\`\`Mohon Tunggu Sedang Mencari Partner\`\`\``, hisoka.user.name, m)
                 }
                 break */
-            }
+            /**}*/
             case 'public': {
                 if (!isCreator) throw mess.owner
                 hisoka.public = true
