@@ -1149,8 +1149,8 @@ break */
                     await sleep(1500)
                     let btn = [{
                                 urlButton: {
-                                    displayText: 'Join Member',
-                                    url: 'https://yanprolandclub.com/yanpro-reseller/'
+                                    displayText: 'Link Rekaman Zoominar',
+                                    url: 'https://youtu.be/X7QT48kdoFw'
                                 }
                             }, {
                                 urlButton: {
