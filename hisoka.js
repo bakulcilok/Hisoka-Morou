@@ -1149,8 +1149,8 @@ break */
                     await sleep(1500)
                     let btn = [{
                                 urlButton: {
-                                    displayText: 'Link Rekaman Zoominar',
-                                    url: 'https://youtu.be/X7QT48kdoFw'
+                                    displayText: 'Link Marketing Kit',
+                                    url: 'https://t.me/marketingkitemeraldaresort'
                                 }
                             }, {
                                 urlButton: {
