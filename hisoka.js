@@ -1644,13 +1644,13 @@ break */
                 m.reply(mess.wait)
                 let anu = await fetchJson('https://raw.githubusercontent.com/bakulcilok/kontenresort/main/kontenresort.json')
                 let random = anu[Math.floor(Math.random() * anu.length)]
-                hisoka.sendMessage(m.chat, { image: { url: random.konten }, caption: `Konten Emeralda Resort` }, { quoted: m })
                 let btn = [{
                     quickReplyButton: {
                         displayText: 'Next',
                         id: 'kontenresort'
                     }
-                }]                
+                }] 
+                hisoka.sendMessage(m.chat, { image: { url: random.konten }, caption: `Konten Emeralda Resort` }, { quoted: m })               
             }
 	    break
             case 'coffe': case 'kopi': {
