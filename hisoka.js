@@ -1640,6 +1640,13 @@ break */
                 hisoka.sendMessage(m.chat, { image: { url: random.konten }, caption: `Konten Emeralda Kolmas` }, { quoted: m })
             }
 	    break
+	    case 'kontenresort': {
+                m.reply(mess.wait)
+                let anu = await fetchJson('https://raw.githubusercontent.com/bakulcilok/kontenresort/main/kontenresort.json')
+                let random = anu[Math.floor(Math.random() * anu.length)]
+                hisoka.sendMessage(m.chat, { image: { url: random.konten }, caption: `Konten Emeralda Resort` }, { quoted: m })
+            }
+	    break
             case 'coffe': case 'kopi': {
             let buttons = [
                     {buttonId: `coffe`, buttonText: {displayText: 'Next Image'}, type: 1}
