@@ -144,7 +144,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
 	  // Anti Link
         if (db.data.chats[m.chat].antilink) {
         if (budy.match(`chat.whatsapp.com`)) {
-        m.reply(`「 ANTI LINK 」\n\nKamu terdeteksi mengirim link group, maaf kamu akan di kick !`)
+        m.reply(`「 ANTI LINK 」\n\nAnda terdeteksi mengirim link group, maaf anda akan di kick !`)
         if (!isBotAdmins) return m.reply(`Ehh bot gak admin T_T`)
         let gclink = (`https://chat.whatsapp.com/`+await hisoka.groupInviteCode(m.chat))
         let isLinkThisGc = new RegExp(gclink, 'i')
@@ -547,6 +547,10 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 m.reply('Script : Contact owner\nwa.me/6282144572368')
             }
             break
+            case 'benefit': {
+                hisoka.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/16b58c911307c3d1e993b.png' }, caption: `‼️ 7 Alasan mengapa anda harus bergabung di YLC (YanproLand Club)\n\n1️⃣ Nyaris Tanpa Modal,, Minim Banget dibandingkan Modal Buka Usaha/wirausaha bahkan Kursus diluaran sana yang rata rata harus mengeluarkan Modal 1 s/d 5 jutaan bahkan ada yang puluhan juta 😣\n2️⃣ Komisi Besar, Profit per closingan nya mulai dari 2juta sampai 15jutaan.\n3️⃣ Tanpa harus pusing mikirin materi promosi , Tanpa Ribet. Udah.\n4️⃣ Profesi Sambilan, Tanpa Ganggu Kerjaan Utama.\n5️⃣ Jejaring market Luas, se-Indonesia 🌐\n6️⃣ Full Support, Habis-Habisan. ‼️\n7️⃣ Dibimbing oleh Tim yang Sudah teruji dan terdidik secara Profesional bahkan Expert  😊🙏\n\n✍🏻 Ketika Anda memutuskan bergabung di tim YLC selain mendapat keuntungan di atas, Anda pun akan mendapatkan Grup Mentoring & Free Coaching bersama kami selama masa pembinaan.\n\n‼️ DAFTAR GRATIS SEKARANG SEBELUM PROGRAM INI DITUTUP\nDAFTAR DISINI\n👇👇👇\nhttp://bit.ly/ylc-member\nhttp://bit.ly/ylc-member\nhttp://bit.ly/ylc-member` }, { quoted: m })
+            }
+            break
             case 'chat': {
                 if (!isCreator) throw mess.owner
                 if (!q) throw 'Option : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete'
@@ -567,7 +571,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 }
             }
             break
-	    case 'family100': {
+	    /** case 'family100': {
                 if ('family100'+m.chat in _family100) {
                     m.reply('Masih Ada Sesi Yang Belum Diselesaikan!')
                     throw false
@@ -583,14 +587,14 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                     hadiah: 6,
                 }
             }
-            break
-            case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
+            break */ 
+            /** case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
             if (!m.quoted && !text) throw `Kirim/reply text dengan caption ${prefix + command}`
             ter = command[1].toLowerCase()
             tex = m.quoted ? m.quoted.text ? m.quoted.text : q ? q : m.text : q ? q : m.text
             m.reply(tex.replace(/[aiueo]/g, ter).replace(/[AIUEO]/g, ter.toUpperCase()))
-            break
-            case 'tebak': {
+            break */
+            /** case 'tebak': {
                 if (!text) throw `Example : ${prefix + command} lagu\n\nOption : \n1. lagu\n2. gambar\n3. kata\n4. kalimat\n5. lirik\n6.lontong`
                 if (args[0] === "lagu") {
                     if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
@@ -675,8 +679,8 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                     }
                 }
             }
-            break
-            case 'kuismath': case 'math': {
+            break */
+            /** case 'kuismath': case 'math': {
                 if (kuismath.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
                 let { genMath, modes } = require('./src/math')
                 if (!text) throw `Mode: ${Object.keys(modes).join(' | ')}\nContoh penggunaan: ${prefix}math medium`
@@ -691,8 +695,8 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                     delete kuismath[m.sender.split('@')[0]]
                 }
             }
-            break
-            case 'jodohku': {
+            break */
+            /** case 'jodohku': {
             if (!m.isGroup) throw mess.group
             let member = participants.map(u => u.id)
             let me = m.sender
@@ -706,8 +710,8 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                     ]
                     await hisoka.sendButtonText(m.chat, buttons, jawab, hisoka.user.name, m, {mentions: ments})
             }
-            break
-            case 'jadian': {
+            break */
+            /** case 'jadian': {
             if (!m.isGroup) throw mess.group
             let member = participants.map(u => u.id)
             let orang = member[Math.floor(Math.random() * member.length)]
@@ -721,7 +725,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                     ]
                     await hisoka.sendButtonText(m.chat, buttons, jawab, hisoka.user.name, m, {mentions: menst})
             }
-            break
+            break */
             case 'react': {
                 reactionMessage = {
                     react: {
@@ -839,7 +843,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
-let teks = `══✪〘 *👥 Tag All* 〙✪══
+let teks = `══✪〘 *👥 Tag All Member Grup* 〙✪══
  
  ➲ *Pesan : ${q ? q : 'kosong'}*\n\n`
                 for (let mem of participants) {
@@ -855,7 +859,7 @@ let teks = `══✪〘 *👥 Tag All* 〙✪══
             hisoka.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
             }
             break
-	    case 'style': case 'styletext': {
+	    /** case 'style': case 'styletext': {
 	        if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 		db.data.users[m.sender].limit -= 1 // -1 limit
 		let { styletext } = require('./lib/scraper')
@@ -867,8 +871,8 @@ let teks = `══✪〘 *👥 Tag All* 〙✪══
                 }
                 m.reply(teks)
 	    }
-	    break
-               case 'vote': {
+	    break */
+               /** case 'vote': {
             if (!m.isGroup) throw mess.group
             if (m.chat in vote) throw `_Masih ada vote di chat ini!_\n\n*${prefix}hapusvote* - untuk menghapus vote`
             if (!text) throw `Masukkan Alasan Melakukan Vote, Example: *${prefix + command} Owner Ganteng*`
@@ -993,9 +997,9 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             }
             hisoka.sendMessage(m.chat, buttonMessageDevote)
 	}
-            break
+            break */
                  
-case 'cekvote':
+/** case 'cekvote':
 if (!m.isGroup) throw mess.group
 if (!(m.chat in vote)) throw `_*tidak ada voting digrup ini!*_\n\n*${prefix}vote* - untuk memulai vote`
 teks_vote = `*「 VOTE 」*
@@ -1022,14 +1026,14 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 ©${hisoka.user.id}
 `
 hisoka.sendTextWithMentions(m.chat, teks_vote, m)
-break
-		case 'deletevote': case'delvote': case 'hapusvote': {
+break */
+		/** case 'deletevote': case'delvote': case 'hapusvote': {
             if (!m.isGroup) throw mess.group
             if (!(m.chat in vote)) throw `_*tidak ada voting digrup ini!*_\n\n*${prefix}vote* - untuk memulai vote`
             delete vote[m.chat]
             m.reply('Berhasil Menghapus Sesi Vote Di Grup Ini')
 	    }
-            break
+            break */
                case 'group': case 'grup': {
                 if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
@@ -1145,31 +1149,31 @@ break
                     await sleep(1500)
                     let btn = [{
                                 urlButton: {
-                                    displayText: 'Official Website',
-                                    url: 'https://yanprolandclub.com/ylc-program/'
+                                    displayText: 'Link Marketing Kit',
+                                    url: 'https://t.me/marketingkitemeraldaresort'
                                 }
                             }, {
-                                callButton: {
-                                    displayText: 'Number Phone Owner',
-                                    phoneNumber: '+62 821-4457-2368'
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: 'Donasi',
-                                    id: 'donasi'
+                                urlButton: {
+                                    displayText: 'Daftar Landing Page',
+                                    url: 'https://emeralda.launchproperty.net/daftarlandingpage'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'Script',
-                                    id: 'sc'
+                                    displayText: 'Benefit YLC',
+                                    id: 'benefit'
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Tentang Bot',
+                                    id: 'menu'
                                 }  
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'Contact Owner',
+                                    displayText: 'Nomor Admin',
                                     id: 'owner'
                                 }
                             }]
-                      let txt = `「 Broadcast Bot 」\n\n${text}`
+                      let txt = `「 Broadcast Otomatis 」\n\n${text}`
                       hisoka.send5ButImg(i, txt, hisoka.user.name, global.thumb, btn)
                     }
                 m.reply(`Sukses Mengirim Broadcast Ke ${anu.length} Group`)
@@ -1184,31 +1188,31 @@ break
 		    await sleep(1500)
 		    let btn = [{
                                 urlButton: {
-                                    displayText: 'Official Website',
-                                    url: 'https://yanprolandclub.com/ylc-program/'
+                                    displayText: 'Join Member',
+                                    url: 'https://yanprolandclub.com/yanpro-reseller/'
                                 }
                             }, {
-                                callButton: {
-                                    displayText: 'Number Phone Owner',
-                                    phoneNumber: '+62 821-4457-2368'
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: 'Donasi',
-                                    id: 'donasi'
+                                urlButton: {
+                                    displayText: 'Daftar Landing Page',
+                                    url: 'https://emeralda.launchproperty.net/daftarlandingpage'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'Script',
-                                    id: 'sc'
+                                    displayText: 'Benefit YLC',
+                                    id: 'benefit'
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Tentang Bot',
+                                    id: 'menu'
                                 }  
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'Contact Owner',
+                                    displayText: 'Nomor Admin',
                                     id: 'owner'
                                 }
                             }]
-                      let txt = `「 Broadcast Bot 」\n\n${text}`
+                      let txt = `「 Broadcast Otomatis 」\n\n${text}`
                       hisoka.send5ButImg(yoi, txt, hisoka.user.name, global.thumb, btn)
 		}
 		m.reply('Sukses Broadcast')
@@ -1262,7 +1266,7 @@ break
                     hisoka.sendText(m.chat, 'List Online:\n\n' + online.map(v => '➣ @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
              }
              break
-            case 'sticker': case 's': case 'stickergif': case 'sgif': {
+            /** case 'sticker': case 's': case 'stickergif': case 'sgif': {
             if (!quoted) throw `Balas Video/Image Dengan Caption ${prefix + command}`
             m.reply(mess.wait)
                     if (/image/.test(mime)) {
@@ -1278,22 +1282,22 @@ break
                 throw `Kirim Gambar/Video Dengan Caption ${prefix + command}\nDurasi Video 1-9 Detik`
                 }
             }
-            break
-            case 'ebinary': {
+            break */
+            /** case 'ebinary': {
             if (!text) throw `Example : ${prefix + command} text`
             let { eBinary } = require('./lib/binary')
             let eb = await eBinary(text)
             m.reply(eb)
         }
-        break
-            case 'dbinary': {
+        break */
+            /** case 'dbinary': {
             if (!text) throw `Example : ${prefix + command} text`
             let { dBinary } = require('./lib/binary')
             let db = await dBinary(text)
             m.reply(db)
         }
-        break
-            case 'emojimix': {
+        break */
+            /* case 'emojimix': {
 		let [emoji1, emoji2] = text.split`+`
 		if (!emoji1) throw `Example : ${prefix + command} 😅+🤔`
 		if (!emoji2) throw `Example : ${prefix + command} 😅+🤔`
@@ -1303,8 +1307,8 @@ break
 		    await fs.unlinkSync(encmedia)
 		}
 	    }
-	    break
-	    case 'emojimix2': {
+	    break */
+	    /** case 'emojimix2': {
 	    if (!text) throw `Example : ${prefix + command} 😅`
 		let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(text)}`)
 		for (let res of anu.results) {
@@ -1312,15 +1316,15 @@ break
 		    await fs.unlinkSync(encmedia)
 		}
 	    }
-	    break
-	       case 'attp': case 'ttp': {
+	    break */
+	       /* case 'attp': case 'ttp': {
             if (!isPremium) throw mess.premium
            if (!text) throw `Example : ${prefix + command} bakulcilok`
            await hisoka.sendMedia(m.chat, 'zenz', '/creator/ttp', { text : text }, 'apikey', m, {asSticker: true})
 
          }
-         break
-	       case 'smeme': case 'stickmeme': case 'stikmeme': case 'stickermeme': case 'stikermeme': {
+         break */
+	       /* case 'smeme': case 'stickmeme': case 'stikmeme': case 'stickermeme': case 'stikermeme': {
 	        let respond = `Kirim/reply image/sticker dengan caption ${prefix + command} text1|text2`
 	        if (!/image/.test(mime)) throw respond
             if (!text) throw respond
@@ -1334,14 +1338,14 @@ break
 	        let FaTiH = await hisoka.sendImageAsSticker(m.chat, smeme, m, { packname: global.packname, author: global.auhor })
 	        await fs.unlinkSync(FaTiH)
             }
-	       break     
-	        case 'simih': case 'simisimi': {
+	       break */     
+	        /** case 'simih': case 'simisimi': {
             if (!text) throw `Example : ${prefix + command} text`
             hm = await fetchJson(api('zenz', '/entertainment/simisimi', { text : text }, 'apikey'))
             m.reply(hm.result.message)
             }
-            break
-            case 'toimage': case 'toimg': {
+            break */
+            /** case 'toimage': case 'toimg': {
                 if (!quoted) throw 'Reply Image'
                 if (!/webp/.test(mime)) throw `Balas sticker dengan caption *${prefix + command}*`
                 m.reply(mess.wait)
@@ -1355,8 +1359,8 @@ break
                     fs.unlinkSync(ran)
                 })
             }
-            break
-	        case 'tomp4': case 'tovideo': {
+            break */
+	        /** case 'tomp4': case 'tovideo': {
                 if (!quoted) throw 'Reply Image'
                 if (!/webp/.test(mime)) throw `balas stiker dengan caption *${prefix + command}*`
                 m.reply(mess.wait)
@@ -1366,8 +1370,8 @@ break
                 await hisoka.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' } }, { quoted: m })
                 await fs.unlinkSync(media)
             }
-            break
-            case 'toaud': case 'toaudio': {
+            break */
+            /** case 'toaud': case 'toaudio': {
             if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan Audio Dengan Caption ${prefix + command}`
             if (!quoted) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan Audio Dengan Caption ${prefix + command}`
             m.reply(mess.wait)
@@ -1376,8 +1380,8 @@ break
             let audio = await toAudio(media, 'mp4')
             hisoka.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
             }
-            break
-            case 'tomp3': {
+            break */
+            /** case 'tomp3': {
             if (/document/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan MP3 Dengan Caption ${prefix + command}`
             if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan MP3 Dengan Caption ${prefix + command}`
             if (!quoted) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan MP3 Dengan Caption ${prefix + command}`
@@ -1387,8 +1391,8 @@ break
             let audio = await toAudio(media, 'mp4')
             hisoka.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Convert By ${hisoka.user.name}.mp3`}, { quoted : m })
             }
-            break
-            case 'tovn': case 'toptt': {
+            break */
+            /* case 'tovn': case 'toptt': {
             if (!/video/.test(mime) && !/audio/.test(mime)) throw `Reply Video/Audio Yang Ingin Dijadikan VN Dengan Caption ${prefix + command}`
             if (!quoted) throw `Reply Video/Audio Yang Ingin Dijadikan VN Dengan Caption ${prefix + command}`
             m.reply(mess.wait)
@@ -1397,8 +1401,8 @@ break
             let audio = await toPTT(media, 'mp4')
             hisoka.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
             }
-            break
-            case 'togif': {
+            break */
+            /* case 'togif': {
                 if (!quoted) throw 'Reply Image'
                 if (!/webp/.test(mime)) throw `balas stiker dengan caption *${prefix + command}*`
                 m.reply(mess.wait)
@@ -1408,8 +1412,8 @@ break
                 await hisoka.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' }, gifPlayback: true }, { quoted: m })
                 await fs.unlinkSync(media)
             }
-            break
-	        case 'tourl': {
+            break */
+	        /** case 'tourl': {
                 m.reply(mess.wait)
 		let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
                 let media = await hisoka.downloadAndSaveMediaMessage(quoted)
@@ -1422,8 +1426,8 @@ break
                 }
                 await fs.unlinkSync(media)
             }
-            break
-            case 'imagenobg': case 'removebg': case 'remove-bg': {
+            break */
+            /** case 'imagenobg': case 'removebg': case 'remove-bg': {
 	    if (!quoted) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
 	    if (!/image/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
 	    if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
@@ -1447,8 +1451,8 @@ break
 	    await fs.unlinkSync(outputFile)
 	    })
 	    }
-	    break
-	    case 'yts': case 'ytsearch': {
+	    break */
+	    /** case 'yts': case 'ytsearch': {
                 if (!text) throw `Example : ${prefix + command} abg corporation`
                 let yts = require("yt-search")
                 let search = await yts(text)
@@ -1459,8 +1463,8 @@ break
                 }
                 hisoka.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
             }
-            break
-        case 'google': {
+            break */
+        /** case 'google': {
                 if (!text) throw `Example : ${prefix + command} Bakulcilok`
                 let google = require('google-it')
                 google({'query': text}).then(res => {
@@ -1473,8 +1477,8 @@ break
                 m.reply(teks)
                 })
                 }
-                break
-        case 'gimage': {
+                break */
+        /** case 'gimage': {
         if (!text) throw `Example : ${prefix + command} kaori cicak`
         let gis = require('g-i-s')
         gis(text, async (error, result) => {
@@ -1495,8 +1499,8 @@ break
                 hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
         })
         }
-        break
-	    case 'play': case 'ytplay': {
+        break */
+	    /** case 'play': case 'ytplay': {
                 if (!text) throw `Example : ${prefix + command} abg corporation`
                 let yts = require("yt-search")
                 let search = await yts(text)
@@ -1524,8 +1528,8 @@ break
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
-            break
-	    case 'ytmp3': case 'ytaudio': {
+            break */
+	    /** case 'ytmp3': case 'ytaudio': {
                 let { yta } = require('./lib/y2mate')
                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`
                 let quality = args[1] ? args[1] : '128kbps'
@@ -1534,8 +1538,8 @@ break
                 hisoka.sendImage(m.chat, media.thumb, `➣ Title : ${media.title}\n➣ File Size : ${media.filesizeF}\n➣ Url : ${isUrl(text)}\n➣ Ext : MP3\n➣ Resolusi : ${args[1] || '128kbps'}`, m)
                 hisoka.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
-            break
-            case 'ytmp4': case 'ytvideo': {
+            break */
+            /** case 'ytmp4': case 'ytvideo': {
                 let { ytv } = require('./lib/y2mate')
                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p`
                 let quality = args[1] ? args[1] : '360p'
@@ -1543,8 +1547,8 @@ break
                 if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
                 hisoka.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `➣ Title : ${media.title}\n➣ File Size : ${media.filesizeF}\n➣ Url : ${isUrl(text)}\n➣ Ext : MP3\n➣ Resolusi : ${args[1] || '360p'}` }, { quoted: m })
             }
-            break
-	    case 'getmusic': {
+            break */
+	    /** case 'getmusic': {
                 let { yta } = require('./lib/y2mate')
                 if (!text) throw `Example : ${prefix + command} 1`
                 if (!m.quoted) return m.reply('Reply Pesan')
@@ -1557,8 +1561,8 @@ break
                 hisoka.sendImage(m.chat, media.thumb, `➣ Title : ${media.title}\n➣ File Size : ${media.filesizeF}\n➣ Url : ${urls[text - 1]}\n➣ Ext : MP3\n➣ Resolusi : ${args[1] || '128kbps'}`, m)
                 hisoka.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
-            break
-            case 'getvideo': {
+            break */
+            /** case 'getvideo': {
                 let { ytv } = require('./lib/y2mate')
                 if (!text) throw `Example : ${prefix + command} 1`
                 if (!m.quoted) return m.reply('Reply Pesan')
@@ -1570,70 +1574,83 @@ break
                 if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
                 hisoka.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `➣ Title : ${media.title}\n➣ File Size : ${media.filesizeF}\n➣ Url : ${urls[text - 1]}\n➣ Ext : MP3\n➣ Resolusi : ${args[1] || '360p'}` }, { quoted: m })
             }
-            break
-            case 'pinterest': {
+            break */
+            /** case 'pinterest': {
                 m.reply(mess.wait)
 		let { pinterest } = require('./lib/scraper')
                 anu = await pinterest(text)
                 result = anu[Math.floor(Math.random() * anu.length)]
                 hisoka.sendMessage(m.chat, { image: { url: result }, caption: '➣ Media Url : '+result }, { quoted: m })
             }
-            break
-            case 'ahegao': case 'maid': case 'ass': case 'nsfwneko': case 'netorare': case 'megumin': case 'tentacles': case 'sfwneko': case 'pussy': case 'blowjob': {
+            break */
+            /** case 'ahegao': case 'maid': case 'ass': case 'nsfwneko': case 'netorare': case 'megumin': case 'tentacles': case 'sfwneko': case 'pussy': case 'blowjob': {
                 if (!isPremium) throw mess.premium
                 m.reply(mess.wait)
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/api/morensfw/'+command, {}, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m })
             }
-            break
-            case 'wallhp': case 'wallpaperhp': {
+            break */
+            /** case 'wallhp': case 'wallpaperhp': {
                 m.reply(mess.wait)
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/randomimage/wallhp', {}, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m })
             }
-            break
-            case 'darkjoke': {
+            break */
+            /** case 'darkjoke': {
                 m.reply(mess.wait)
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/randomimage/darkjoke', {}, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m })
             }
-            break
-            case 'aesthetic': {
+            break */
+            /** case 'aesthetic': {
                 m.reply(mess.wait)
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/randomimage/aesthetic', {}, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m })
             }
-            break
-            case 'cecan': {
+            break */
+            /** case 'cecan': {
                 if (!isPremium) throw mess.premium
                 m.reply(mess.wait)
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/randomimage/cecan', {}, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m })
             }
-            break
-            case 'cogan': {
+            break */
+            /** case 'cogan': {
                 m.reply(mess.wait)
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/randomimage/cogan', {}, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m })
             }
-            break
-            case 'memeindo': case 'meme': {
+            break */
+             /** case 'memeindo': case 'meme': {
                 m.reply(mess.wait)
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/randomimage/memeindo', {}, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m })
             }
-            break
-            case 'cosplay': {
+            break */
+            /** case 'cosplay': {
                 m.reply(mess.wait)
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/randomimage/cosplay', {}, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m })
             }
-            break
-	    case 'couple': {
+            break */
+	    /** case 'couple': {
                 m.reply(mess.wait)
                 let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
                 let random = anu[Math.floor(Math.random() * anu.length)]
                 hisoka.sendMessage(m.chat, { image: { url: random.male }, caption: `Couple Male` }, { quoted: m })
                 hisoka.sendMessage(m.chat, { image: { url: random.female }, caption: `Couple Female` }, { quoted: m })
             }
-            break
+            break */
             case 'kontenkolmas': {
                 m.reply(mess.wait)
                 let anu = await fetchJson('https://raw.githubusercontent.com/bakulcilok/kontenkolmas/main/kontenkolmas.json')
                 let random = anu[Math.floor(Math.random() * anu.length)]
-                hisoka.sendMessage(m.chat, { image: { url: random.konten }, caption: `Konten 1` }, { quoted: m })
+                hisoka.sendMessage(m.chat, { image: { url: random.konten }, caption: `Konten Emeralda Kolmas` }, { quoted: m })
+            }
+	    break
+	    case 'kontenresort': {
+                m.reply(mess.wait)
+                let anu = await fetchJson('https://raw.githubusercontent.com/bakulcilok/kontenresort/main/kontenresort.json')
+                let random = anu[Math.floor(Math.random() * anu.length)]
+                let btn = [{
+                    quickReplyButton: {
+                        displayText: 'Next',
+                        id: 'kontenresort'
+                    }
+                }] 
+                hisoka.sendMessage(m.chat, { image: { url: random.konten }, caption: `Konten Emeralda Resort` }, { quoted: m })               
             }
 	    break
             case 'coffe': case 'kopi': {
@@ -1650,7 +1667,7 @@ break
                 hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
-            case 'wallpaper': {
+            /** case 'wallpaper': {
                 if (!text) throw 'Masukkan Query Title'
 		let { wallpaper } = require('./lib/scraper')
                 anu = await wallpaper(text)
@@ -1667,8 +1684,8 @@ break
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
-            break
-            case 'wikimedia': {
+            break */
+            /** case 'wikimedia': {
                 if (!text) throw 'Masukkan Query Title'
 		let { wikimedia } = require('./lib/scraper')
                 anu = await wikimedia(text)
@@ -1685,8 +1702,8 @@ break
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
-            break
-            case 'quotesanime': case 'quoteanime': {
+            break */
+            /** case 'quotesanime': case 'quoteanime': {
 		let { quotesAnime } = require('./lib/scraper')
                 let anu = await quotesAnime()
                 result = anu[Math.floor(Math.random() * anu.length)]
@@ -1701,8 +1718,8 @@ break
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
-            break
-	        case 'motivasi': case 'dilanquote': case 'bucinquote': case 'katasenja': case 'puisi': {
+            break */
+	        /** case 'motivasi': case 'dilanquote': case 'bucinquote': case 'katasenja': case 'puisi': {
                 let anu = await fetchJson(api('zenz', '/randomtext/'+command, {}, 'apikey'))
                 let buttons = [
                     {buttonId: `motivasi`, buttonText: {displayText: 'Next'}, type: 1}
@@ -1715,247 +1732,247 @@ break
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
-            break
-            case '3dchristmas': case '3ddeepsea': case 'americanflag': case '3dscifi': case '3drainbow': case '3dwaterpipe': case 'halloweenskeleton': case 'sketch': case 'bluecircuit': case 'space': case 'metallic': case 'fiction': case 'greenhorror': case 'transformer': case 'berry': case 'thunder': case 'magma': case '3dcrackedstone': case '3dneonlight': case 'impressiveglitch': case 'naturalleaves': case 'fireworksparkle': case 'matrix': case 'dropwater':  case 'harrypotter': case 'foggywindow': case 'neondevils': case 'christmasholiday': case '3dgradient': case 'blackpink': case 'gluetext': {
+            break */
+            /** case '3dchristmas': case '3ddeepsea': case 'americanflag': case '3dscifi': case '3drainbow': case '3dwaterpipe': case 'halloweenskeleton': case 'sketch': case 'bluecircuit': case 'space': case 'metallic': case 'fiction': case 'greenhorror': case 'transformer': case 'berry': case 'thunder': case 'magma': case '3dcrackedstone': case '3dneonlight': case 'impressiveglitch': case 'naturalleaves': case 'fireworksparkle': case 'matrix': case 'dropwater':  case 'harrypotter': case 'foggywindow': case 'neondevils': case 'christmasholiday': case '3dgradient': case 'blackpink': case 'gluetext': {
                 if (!text) throw `Example : ${prefix + command} text`
                 m.reply(mess.wait)
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/textpro/' + command, { text: text }, 'apikey') }, caption: `Text Pro ${command}` }, { quoted: m})
 	    }
-            break
-	    case 'shadow': case 'romantic': case 'smoke': case 'burnpapper': case 'naruto': case 'lovemsg': case 'grassmsg': case 'lovetext': case 'coffecup': case 'butterfly': case 'harrypotter': case 'retrolol': {
+            break */
+	    /** case 'shadow': case 'romantic': case 'smoke': case 'burnpapper': case 'naruto': case 'lovemsg': case 'grassmsg': case 'lovetext': case 'coffecup': case 'butterfly': case 'harrypotter': case 'retrolol': {
                 if (!text) throw 'No Query Text'
                 m.reply(mess.wait)
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/photooxy/' + command, { text: text }, 'apikey') }, caption: `Photo Oxy ${command}` }, { quoted: m })
             }
-            break
-            case 'ffcover': case 'crossfire': case 'galaxy': case 'glass': case 'neon': case 'beach': case 'blackpink': case 'igcertificate': case 'ytcertificate': {
+            break */
+            /** case 'ffcover': case 'crossfire': case 'galaxy': case 'glass': case 'neon': case 'beach': case 'blackpink': case 'igcertificate': case 'ytcertificate': {
                 if (!text) throw 'No Query Text'
                 m.reply(mess.wait)
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/ephoto/' + command, { text: text }, 'apikey') }, caption: `Ephoto ${command}` }, { quoted: m })
             }
-            break
-	    case 'nomerhoki': case 'nomorhoki': {
+            break */
+	    /** case 'nomerhoki': case 'nomorhoki': {
                 if (!Number(text)) throw `Example : ${prefix + command} 6288292024190`
                 let anu = await primbon.nomer_hoki(Number(text))
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Nomor HP :* ${anu.message.nomer_hp}\n➣ *Angka Shuzi :* ${anu.message.angka_shuzi}\n➣ *Energi Positif :*\n- Kekayaan : ${anu.message.energi_positif.kekayaan}\n- Kesehatan : ${anu.message.energi_positif.kesehatan}\n- Cinta : ${anu.message.energi_positif.cinta}\n- Kestabilan : ${anu.message.energi_positif.kestabilan}\n- Persentase : ${anu.message.energi_positif.persentase}\n➣ *Energi Negatif :*\n- Perselisihan : ${anu.message.energi_negatif.perselisihan}\n- Kehilangan : ${anu.message.energi_negatif.kehilangan}\n- Malapetaka : ${anu.message.energi_negatif.malapetaka}\n- Kehancuran : ${anu.message.energi_negatif.kehancuran}\n- Persentase : ${anu.message.energi_negatif.persentase}`, m)
             }
-            break
-            case 'artimimpi': case 'tafsirmimpi': {
+            break */
+            /** case 'artimimpi': case 'tafsirmimpi': {
                 if (!text) throw `Example : ${prefix + command} belanja`
                 let anu = await primbon.tafsir_mimpi(text)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Mimpi :* ${anu.message.mimpi}\n➣ *Arti :* ${anu.message.arti}\n➣ *Solusi :* ${anu.message.solusi}`, m)
             }
-            break
-            case 'ramalanjodoh': case 'ramaljodoh': {
+            break */
+            /** case 'ramalanjodoh': case 'ramaljodoh': {
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005, Novia, 16, 11, 2004`
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_jodoh(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Nama Anda :* ${anu.message.nama_anda.nama}\n➣ *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n➣ *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n➣ *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n➣ *Hasil :* ${anu.message.result}\n➣ *Catatan :* ${anu.message.catatan}`, m)
             }
-            break
-            case 'ramalanjodohbali': case 'ramaljodohbali': {
+            break */
+            /** case 'ramalanjodohbali': case 'ramaljodohbali': {
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005, Novia, 16, 11, 2004`
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_jodoh_bali(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Nama Anda :* ${anu.message.nama_anda.nama}\n➣ *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n➣ *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n➣ *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n➣ *Hasil :* ${anu.message.result}\n➣ *Catatan :* ${anu.message.catatan}`, m)
             }
-            break
-            case 'suamiistri': {
+            break */
+            /** case 'suamiistri': {
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005, Novia, 16, 11, 2004`
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.suami_istri(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Nama Suami :* ${anu.message.suami.nama}\n➣ *Lahir Suami :* ${anu.message.suami.tgl_lahir}\n➣ *Nama Istri :* ${anu.message.istri.nama}\n➣ *Lahir Istri :* ${anu.message.istri.tgl_lahir}\n➣ *Hasil :* ${anu.message.result}\n➣ *Catatan :* ${anu.message.catatan}`, m)
             }
-            break
-            case 'ramalancinta': case 'ramalcinta': {
+            break */
+            /** case 'ramalancinta': case 'ramalcinta': {
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005, Novia, 16, 11, 2004`
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_cinta(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Nama Anda :* ${anu.message.nama_anda.nama}\n➣ *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n➣ *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n➣ *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n➣ *Sisi Positif :* ${anu.message.sisi_positif}\n➣ *Sisi Negatif :* ${anu.message.sisi_negatif}\n➣ *Catatan :* ${anu.message.catatan}`, m)
             }
-            break
-            case 'artinama': {
+            break */
+            /** case 'artinama': {
                 if (!text) throw `Example : ${prefix + command} Dika Ardianta`
                 let anu = await primbon.arti_nama(text)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Nama :* ${anu.message.nama}\n➣ *Arti :* ${anu.message.arti}\n➣ *Catatan :* ${anu.message.catatan}`, m)
             }
-            break
-            case 'kecocokannama': case 'cocoknama': {
+            break */
+            /** case 'kecocokannama': case 'cocoknama': {
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005`
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.kecocokan_nama(nama, tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Nama :* ${anu.message.nama}\n➣ *Lahir :* ${anu.message.tgl_lahir}\n➣ *Life Path :* ${anu.message.life_path}\n➣ *Destiny :* ${anu.message.destiny}\n➣ *Destiny Desire :* ${anu.message.destiny_desire}\n➣ *Personality :* ${anu.message.personality}\n➣ *Persentase :* ${anu.message.persentase_kecocokan}`, m)
             }
-            break
-            case 'kecocokanpasangan': case 'cocokpasangan': case 'pasangan': {
+            break */
+            /** case 'kecocokanpasangan': case 'cocokpasangan': case 'pasangan': {
                 if (!text) throw `Example : ${prefix + command} Dika|Novia`
                 let [nama1, nama2] = text.split`|`
                 let anu = await primbon.kecocokan_nama_pasangan(nama1, nama2)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendImage(m.chat,  anu.message.gambar, `➣ *Nama Anda :* ${anu.message.nama_anda}\n➣ *Nama Pasangan :* ${anu.message.nama_pasangan}\n➣ *Sisi Positif :* ${anu.message.sisi_positif}\n➣ *Sisi Negatif :* ${anu.message.sisi_negatif}`, m)
             }
-            break
-            case 'jadianpernikahan': case 'jadiannikah': {
+            break */
+            /** case 'jadianpernikahan': case 'jadiannikah': {
                 if (!text) throw `Example : ${prefix + command} 6, 12, 2020`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.tanggal_jadian_pernikahan(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Tanggal Pernikahan :* ${anu.message.tanggal}\n➣ *karakteristik :* ${anu.message.karakteristik}`, m)
             }
-            break
-            case 'sifatusaha': {
+            break */
+            /** case 'sifatusaha': {
                 if (!ext)throw `Example : ${prefix+ command} 28, 12, 2021`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.sifat_usaha_bisnis(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Lahir :* ${anu.message.hari_lahir}\n➣ *Usaha :* ${anu.message.usaha}`, m)
             }
-            break
-            case 'rejeki': case 'rezeki': {
+            break */
+            /** case 'rejeki': case 'rezeki': {
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.rejeki_hoki_weton(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Lahir :* ${anu.message.hari_lahir}\n➣ *Rezeki :* ${anu.message.rejeki}\n➣ *Catatan :* ${anu.message.catatan}`, m)
             }
-            break
-            case 'pekerjaan': case 'kerja': {
+            break */
+            /** case 'pekerjaan': case 'kerja': {
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.pekerjaan_weton_lahir(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Lahir :* ${anu.message.hari_lahir}\n➣ *Pekerjaan :* ${anu.message.pekerjaan}\n➣ *Catatan :* ${anu.message.catatan}`, m)
             }
-            break
-            case 'ramalannasib': case 'ramalnasib': case 'nasib': {
+            break */
+            /** case 'ramalannasib': case 'ramalnasib': case 'nasib': {
                 if (!text) throw `Example : 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.ramalan_nasib(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Analisa :* ${anu.message.analisa}\n➣ *Angka Akar :* ${anu.message.angka_akar}\n➣ *Sifat :* ${anu.message.sifat}\n➣ *Elemen :* ${anu.message.elemen}\n➣ *Angka Keberuntungan :* ${anu.message.angka_keberuntungan}`, m)
             }
-            break
-            case 'potensipenyakit': case 'penyakit': {
+            break */
+            /** case 'potensipenyakit': case 'penyakit': {
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.cek_potensi_penyakit(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Analisa :* ${anu.message.analisa}\n➣ *Sektor :* ${anu.message.sektor}\n➣ *Elemen :* ${anu.message.elemen}\n➣ *Catatan :* ${anu.message.catatan}`, m)
             }
-            break
-            case 'artitarot': case 'tarot': {
+            break */
+            /** case 'artitarot': case 'tarot': {
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.arti_kartu_tarot(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendImage(m.chat, anu.message.image, `➣ *Lahir :* ${anu.message.tgl_lahir}\n➣ *Simbol Tarot :* ${anu.message.simbol_tarot}\n➣ *Arti :* ${anu.message.arti}\n➣ *Catatan :* ${anu.message.catatan}`, m)
             }
-            break
-            case 'fengshui': {
+            break */
+            /** case 'fengshui': {
                 if (!text) throw `Example : ${prefix + command} Dika, 1, 2005\n\nNote : ${prefix + command} Nama, gender, tahun lahir\nGender : 1 untuk laki-laki & 2 untuk perempuan`
                 let [nama, gender, tahun] = text.split`,`
                 let anu = await primbon.perhitungan_feng_shui(nama, gender, tahun)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Nama :* ${anu.message.nama}\n➣ *Lahir :* ${anu.message.tahun_lahir}\n➣ *Gender :* ${anu.message.jenis_kelamin}\n➣ *Angka Kua :* ${anu.message.angka_kua}\n➣ *Kelompok :* ${anu.message.kelompok}\n➣ *Karakter :* ${anu.message.karakter}\n➣ *Sektor Baik :* ${anu.message.sektor_baik}\n➣ *Sektor Buruk :* ${anu.message.sektor_buruk}`, m)
             }
-            break
-            case 'haribaik': {
+            break */
+            /** case 'haribaik': {
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.petung_hari_baik(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Lahir :* ${anu.message.tgl_lahir}\n➣ *Kala Tinantang :* ${anu.message.kala_tinantang}\n➣ *Info :* ${anu.message.info}\n➣ *Catatan :* ${anu.message.catatan}`, m)
             }
-            break
-            case 'harisangar': case 'taliwangke': {
+            break */
+            /** case 'harisangar': case 'taliwangke': {
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.hari_sangar_taliwangke(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Lahir :* ${anu.message.tgl_lahir}\n➣ *Hasil :* ${anu.message.result}\n➣ *Info :* ${anu.message.info}\n➣ *Catatan :* ${anu.message.catatan}`, m)
             }
-            break
-            case 'harinaas': case 'harisial': {
+            break */
+            /** case 'harinaas': case 'harisial': {
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_hari_naas(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Hari Lahir :* ${anu.message.hari_lahir}\n➣ *Tanggal Lahir :* ${anu.message.tgl_lahir}\n➣ *Hari Naas :* ${anu.message.hari_naas}\n➣ *Info :* ${anu.message.catatan}\n➣ *Catatan :* ${anu.message.info}`, m)
             }
-            break
-            case 'nagahari': case 'harinaga': {
+            break */
+            /** case 'nagahari': case 'harinaga': {
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.rahasia_naga_hari(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Hari Lahir :* ${anu.message.hari_lahir}\n➣ *Tanggal Lahir :* ${anu.message.tgl_lahir}\n➣ *Arah Naga Hari :* ${anu.message.arah_naga_hari}\n➣ *Catatan :* ${anu.message.catatan}`, m)
             }
-            break
-            case 'arahrejeki': case 'arahrezeki': {
+            break */
+            /** case 'arahrejeki': case 'arahrezeki': {
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_arah_rejeki(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Hari Lahir :* ${anu.message.hari_lahir}\n➣ *tanggal Lahir :* ${anu.message.tgl_lahir}\n➣ *Arah Rezeki :* ${anu.message.arah_rejeki}\n➣ *Catatan :* ${anu.message.catatan}`, m)
             }
-            break
-            case 'peruntungan': {
+            break */
+            /** case 'peruntungan': {
                 if (!text) throw `Example : ${prefix + command} DIka, 7, 7, 2005, 2022\n\nNote : ${prefix + command} Nama, tanggal lahir, bulan lahir, tahun lahir, untuk tahun`
                 let [nama, tgl, bln, thn, untuk] = text.split`,`
                 let anu = await primbon.ramalan_peruntungan(nama, tgl, bln, thn, untuk)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Nama :* ${anu.message.nama}\n➣ *Lahir :* ${anu.message.tgl_lahir}\n➣ *Peruntungan Tahun :* ${anu.message.peruntungan_tahun}\n➣ *Hasil :* ${anu.message.result}\n➣ *Catatan :* ${anu.message.catatan}`, m)
             }
-            break
-            case 'weton': case 'wetonjawa': {
+            break */
+            /** case 'weton': case 'wetonjawa': {
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.weton_jawa(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Tanggal :* ${anu.message.tanggal}\n➣ *Jumlah Neptu :* ${anu.message.jumlah_neptu}\n➣ *Watak Hari :* ${anu.message.watak_hari}\n➣ *Naga Hari :* ${anu.message.naga_hari}\n➣ *Jam Baik :* ${anu.message.jam_baik}\n➣ *Watak Kelahiran :* ${anu.message.watak_kelahiran}`, m)
             }
-            break
-            case 'sifat': case 'karakter': {
+            break */
+            /** case 'sifat': case 'karakter': {
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005`
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.sifat_karakter_tanggal_lahir(nama, tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Nama :* ${anu.message.nama}\n➣ *Lahir :* ${anu.message.tgl_lahir}\n➣ *Garis Hidup :* ${anu.message.garis_hidup}`, m)
             }
-            break
-            case 'keberuntungan': {
+            break */
+            /** case 'keberuntungan': {
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005`
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.potensi_keberuntungan(nama, tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Nama :* ${anu.message.nama}\n➣ *Lahir :* ${anu.message.tgl_lahir}\n➣ *Hasil :* ${anu.message.result}`, m)
             }
-            break
-            case 'memancing': {
+            break */
+            /** case 'memancing': {
                 if (!text) throw `Example : ${prefix + command} 12, 1, 2022`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_memancing_ikan(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Tanggal :* ${anu.message.tgl_memancing}\n➣ *Hasil :* ${anu.message.result}\n➣ *Catatan :* ${anu.message.catatan}`, m)
             }
-            break
-            case 'masasubur': {
+            break */
+            /** case 'masasubur': {
                 if (!text) throw `Example : ${prefix + command} 12, 1, 2022, 28\n\nNote : ${prefix + command} hari pertama menstruasi, siklus`
                 let [tgl, bln, thn, siklus] = text.split`,`
                 let anu = await primbon.masa_subur(tgl, bln, thn, siklus)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Hasil :* ${anu.message.result}\n➣ *Catatan :* ${anu.message.catatan}`, m)
             }
-            break
-            case 'zodiak': case 'zodiac': {
+            break */
+            /** case 'zodiak': case 'zodiac': {
                 if (!text) throw `Example : ${prefix+ command} 7 7 2005`
                 let zodiak = [
                     ["capricorn", new Date(1970, 0, 1)],
@@ -1989,15 +2006,15 @@ break
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Zodiak :* ${anu.message.zodiak}\n➣ *Nomor :* ${anu.message.nomor_keberuntungan}\n➣ *Aroma :* ${anu.message.aroma_keberuntungan}\n➣ *Planet :* ${anu.message.planet_yang_mengitari}\n➣ *Bunga :* ${anu.message.bunga_keberuntungan}\n➣ *Warna :* ${anu.message.warna_keberuntungan}\n➣ *Batu :* ${anu.message.batu_keberuntungan}\n➣ *Elemen :* ${anu.message.elemen_keberuntungan}\n➣ *Pasangan Zodiak :* ${anu.message.pasangan_zodiak}\n➣ *Catatan :* ${anu.message.catatan}`, m)
             }
-            break
-            case 'shio': {
+            break */
+            /** case 'shio': {
                 if (!text) throw `Example : ${prefix + command} tikus\n\nNote : For Detail https://primbon.com/shio.htm`
                 let anu = await primbon.shio(text)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `➣ *Hasil :* ${anu.message}`, m)
             }
-            break
-	    case 'stalker': case 'stalk': {
+            break */
+	    /** case 'stalker': case 'stalk': {
 		if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply('Limit Harian Anda Telah Habis')
                 if (!text) return m.reply(`Example : ${prefix +command} type id\n\nList Type :\n1. ff (Free Fire)\n2. ml (Mobile Legends)\n3. aov (Arena Of Valor)\n4. cod (Call Of Duty)\n5. pb (point Blank)\n6. ig (Instagram)\n7. npm (https://npmjs.com)`)
                 let [type, id, zone] = args
@@ -2048,8 +2065,8 @@ break
                     m.reply(`Example : ${prefix +command} type id\n\nList Type :\n1. ff (Free Fire)\n2. ml (Mobile Legends)\n3. aov (Arena Of Valor)\n4. cod (Call Of Duty)\n5. pb (point Blank)\n6. ig (Instagram)\n7. npm (https://npmjs.com)`)
                 }
             }
-            break
-	        case 'tiktok': case 'tiktoknowm': {
+            break */
+	        /** case 'tiktok': case 'tiktoknowm': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
@@ -2066,8 +2083,8 @@ break
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
-            break
-            case 'tiktokwm': case 'tiktokwatermark': {
+            break */
+            /** case 'tiktokwm': case 'tiktokwatermark': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
@@ -2084,8 +2101,8 @@ break
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
-            break
-            case 'tiktokmp3': case 'tiktokaudio': {
+            break */
+            /** case 'tiktokmp3': case 'tiktokaudio': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/musically', { url: text }, 'apikey'))
@@ -2102,31 +2119,31 @@ break
                 let msg = await hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
                 hisoka.sendMessage(m.chat, { audio: { url: anu.result.audio }, mimetype: 'audio/mpeg'}, { quoted: msg })
             }
-            break
-	        case 'instagram': case 'igdl': case 'igtv': case 'igreel': {
+            break */
+	        /** case 'instagram': case 'igdl': case 'igtv': case 'igreel': {
                 if (!isPremium) return global.mess("premium", m)
                 if (!isUrl(text)) return m.reply(`Example: ${prefix + command} url`)
                 let fetch = await fetchJson(global.api("zenz", "/downloader/instagram", { url:isUrl(text)[0] }, "apikey"))
                 for (let url of fetch.result) hisoka.sendFileUrl(m.chat, url, "", m, { caption: `Download Media From : ${isUrl(text)[0]}` })
             }
-            break
-            case 'joox': case 'jooxdl': {
+            break */
+            /** case 'joox': case 'jooxdl': {
                 if (!text) throw 'No Query Title'
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/joox', { query: text }, 'apikey'))
                 let msg = await hisoka.sendImage(m.chat, anu.result.img, `➣ Title : ${anu.result.lagu}\n➣ Album : ${anu.result.album}\n➣ Singer : ${anu.result.penyanyi}\n➣ Publish : ${anu.result.publish}\n➣ Lirik :\n${anu.result.lirik.result}`, m)
                 hisoka.sendMessage(m.chat, { audio: { url: anu.result.mp4aLink }, mimetype: 'audio/mpeg', fileName: anu.result.lagu+'.m4a' }, { quoted: msg })
             }
-            break
-            case 'soundcloud': case 'scdl': {
+            break */
+            /** case 'soundcloud': case 'scdl': {
                 if (!text) throw 'No Query Title'
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/soundcloud', { url: isUrl(text)[0] }, 'apikey'))
                 let msg = await hisoka.sendImage(m.chat, anu.result.thumb, `➣ Title : ${anu.result.title}\n➣ Url : ${isUrl(text)[0]}`)
                 hisoka.sendMessage(m.chat, { audio: { url: anu.result.url }, mimetype: 'audio/mpeg', fileName: anu.result.title+'.m4a' }, { quoted: msg })
             }
-            break
-	        case 'twitdl': case 'twitter': {
+            break */
+	        /** case 'twitdl': case 'twitter': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/api/downloader/twitter', { url: text }, 'apikey'))
@@ -2142,8 +2159,8 @@ break
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
-            break
-            case 'twittermp3': case 'twitteraudio': {
+            break */
+            /** case 'twittermp3': case 'twitteraudio': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/api/downloader/twitter', { url: text }, 'apikey'))
@@ -2160,23 +2177,23 @@ break
                 let msg = await hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
                 hisoka.sendMessage(m.chat, { audio: { url: anu.result.audio } }, { quoted: msg })
             }
-            break
-	        case 'fbdl': case 'fb': case 'facebook': {
+            break */
+	        /** case 'fbdl': case 'fb': case 'facebook': {
                 if (!isPremium) throw mess.premium
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/facebook', { url: text }, 'apikey'))
                 hisoka.sendMessage(m.chat, { video: { url: anu.result.url }, caption: `➣ Title : ${anu.result.title}`}, { quoted: m })
             }
-            break
-	        case 'pindl': case 'pinterestdl': {
+            break */
+	        /* case 'pindl': case 'pinterestdl': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/api/downloader/pinterestdl', { url: text }, 'apikey'))
                 hisoka.sendMessage(m.chat, { video: { url: anu.result }, caption: `Download From ${text}` }, { quoted: m })
             }
-            break
-            case 'umma': case 'ummadl': {
+            break */
+            /** case 'umma': case 'ummadl': {
 	        if (!text) throw `Example : ${prefix + command} https://umma.id/channel/video/post/gus-arafat-sumber-kecewa-84464612933698`
                 let { umma } = require('./lib) scraper')
 		let anu = await umma(isUrl(text)[0])
@@ -2206,23 +2223,23 @@ Untuk Download Media Silahkan Klik salah satu Button dibawah ini atau masukkan c
 		    })
 		}
 	    }
-	    break
-        case 'ringtone': {
+	    break */
+        /** case 'ringtone': {
 		if (!text) throw `Example : ${prefix + command} black rover`
         let { ringtone } = require('./lib/scraper')
 		let anu = await ringtone(text)
 		let result = anu[Math.floor(Math.random() * anu.length)]
 		hisoka.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
 	    }
-	    break
-		case 'iqra': {
+	    break */
+		/** case 'iqra': {
 		oh = `Example : ${prefix + command} 3\n\nIQRA Yang tersedia : 1,2,3,4,5,6`
 		if (!text) throw oh
 		yy = await getBuffer(`https://islamic-api-indonesia.herokuapp.com/api/data/pdf/iqra${text}`)
 		hisoka.sendMessage(m.chat, {document: yy, mimetype: 'application/pdf', fileName: `iqra${text}.pdf`}, {quoted:m}).catch ((err) => m.reply(oh))
 		}
-		break
-		case 'juzamma': {
+		break */
+		/** case 'juzamma': {
 		if (args[0] === 'pdf') {
 		m.reply(mess.wait)
 		hisoka.sendMessage(m.chat, {document: {url: 'https://fatiharridho.my.id/database/islam/juz-amma-arab-latin-indonesia.pdf'}, mimetype: 'application/pdf', fileName: 'juz-amma-arab-latin-indonesia.pdf'}, {quoted:m})
@@ -2241,8 +2258,8 @@ Untuk Download Media Silahkan Klik salah satu Button dibawah ini atau masukkan c
 Format yang tersedia : pdf, docx, pptx, xlsx`)
 		}
 		}
-		break
-		case 'hadis': case 'hadist': {
+		break */
+		/** case 'hadis': case 'hadist': {
 		if (!args[0]) throw `Contoh:
 ${prefix + command} bukhari 1
 ${prefix + command} abu-daud 1
@@ -2277,8 +2294,8 @@ ${id}`)
 		m.reply(`Hadis tidak ditemukan !`)
 		}
 		}
-		break
-		case 'alquran': {
+		break */
+		/** case 'alquran': {
 		if (!args[0]) throw `Contoh penggunaan:\n${prefix + command} 1 2\n\nmaka hasilnya adalah surah Al-Fatihah ayat 2 beserta audionya, dan ayatnya 1 aja`
 		if (!args[1]) throw `Contoh penggunaan:\n${prefix + command} 1 2\n\nmaka hasilnya adalah surah Al-Fatihah ayat 2 beserta audionya, dan ayatnya 1 aja`
 		let res = await fetchJson(`https://islamic-api-indonesia.herokuapp.com/api/data/quran?surah=${args[0]}&ayat=${args[1]}`)
@@ -2290,8 +2307,8 @@ ${id}`)
 		m.reply(txt)
 		hisoka.sendMessage(m.chat, {audio: { url: res.result.data.audio.primary }, mimetype: 'audio/mpeg'}, { quoted : m })
 		}
-		break
-		case 'tafsirsurah': {
+		break */
+		/** case 'tafsirsurah': {
 		if (!args[0]) throw `Contoh penggunaan:\n${prefix + command} 1 2\n\nmaka hasilnya adalah tafsir surah Al-Fatihah ayat 2`
 		if (!args[1]) throw `Contoh penggunaan:\n${prefix + command} 1 2\n\nmaka hasilnya adalah tafsir surah Al-Fatihah ayat 2`
 		let res = await fetchJson(`https://islamic-api-indonesia.herokuapp.com/api/data/quran?surah=${args[0]}&ayat=${args[1]}`)
@@ -2304,8 +2321,8 @@ ${id}`)
 ( Q.S ${res.result.data.surah.name.transliteration.id} : ${res.result.data.number.inSurah} )`
 		m.reply(txt)
 		}
-		break
-		   case 'bass': case 'blown': case 'deep': case 'earrape': case 'fast': case 'fat': case 'nightcore': case 'reverse': case 'robot': case 'slow': case 'smooth': case 'tupai':
+		break */
+		   /** case 'bass': case 'blown': case 'deep': case 'earrape': case 'fast': case 'fat': case 'nightcore': case 'reverse': case 'robot': case 'slow': case 'smooth': case 'tupai':
                 try {
                 let set
                 if (/bass/.test(command)) set = '-af equalizer=f=54:width_type=o:width=2:g=20'
@@ -2335,7 +2352,7 @@ ${id}`)
                 } catch (e) {
                 m.reply(e)
                 }
-                break
+                break */
             case 'setcmd': {
                 if (!m.quoted) throw 'Reply Pesan!'
                 if (!m.quoted.fileSha256) throw 'SHA256 Hash Missing'
@@ -2417,6 +2434,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             }
 	    break
 	    case 'anonymous': {
+            if (!isCreator) throw mess.owner
                 if (m.isGroup) return m.reply('Fitur Tidak Dapat Digunakan Untuk Group!')
 				this.anonymous = this.anonymous ? this.anonymous : {}
 				let buttons = [
@@ -2608,7 +2626,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 hisoka.sendContact(m.chat, global.owner, m)
             }
             break
-            case 'playstore': {
+            /** case 'playstore': {
             if (!text) throw `Example : ${prefix + command} clash of clans`
             let res = await fetchJson(api('zenz', '/webzone/playstore', { query: text }, 'apikey'))
             let teks = `➣ Playstore Search From : ${text}\n\n`
@@ -2620,8 +2638,8 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             }
             m.reply(teks)
             }
-            break
-            case 'chordlagu': {
+            break */
+            /** case 'chordlagu': {
             if (!text) throw `Example : ${prefix + command} melepas lajang`
             let res = await fetchJson(api('zenz', '/searching/chordlagu', { query: text }, 'apikey'))
             let teks = `➣ Chord Lagu : ${text}\n\n`
@@ -2629,8 +2647,8 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             teks += `${res.result}`
             m.reply(teks)
             }
-            break
-            case 'gsmarena': {
+            break */
+            /** case 'gsmarena': {
             if (!text) throw `Example : ${prefix + command} samsung`
             let res = await fetchJson(api('zenz', '/webzone/gsmarena', { query: text }, 'apikey'))
             let { judul, rilis, thumb, ukuran, type, storage, display, inchi, pixel, videoPixel, ram, chipset, batrai, merek_batre, detail } = res.result
@@ -2650,8 +2668,8 @@ let capt = `➣ Title: ${judul}
 ➣ Detail: ${detail}`
             hisoka.sendImage(m.chat, thumb, capt, m)
             }
-            break
-            case 'ggg': {
+            break */
+            /** case 'ggg': {
             let res = await fetchJson(api('zenz', '/information/bmkg/', {}, 'apikey'))
             let { tanggal, jam, datetime, coordinates, lintang, bujur, magnitude, kedalaman, wilayah, potensi, dirasakan, shakemap } = res.result
 let capt = `➣ Title: Update Gempa Terkini di Indonesia\n\n
@@ -2668,8 +2686,8 @@ let capt = `➣ Title: Update Gempa Terkini di Indonesia\n\n
 ➣ Dirasakan : ${dirasakan}`
             hisoka.sendImage(m.chat, shakemap, capt, m)
             }
-            break
-            case 'jadwalbioskop': {
+            break */
+            /** case 'jadwalbioskop': {
             if (!text) throw `Example: ${prefix + command} jakarta`
             let res = await fetchJson(api('zenz', '/webzone/jadwalbioskop', { kota: text }, 'apikey'))
             let capt = `Jadwal Bioskop From : ${text}\n\n`
@@ -2680,8 +2698,8 @@ let capt = `➣ Title: Update Gempa Terkini di Indonesia\n\n
             }
             hisoka.sendImage(m.chat, res.result[0].thumb, capt, m)
             }
-            break
-            case 'nowplayingbioskop': {
+            break */
+            /** case 'nowplayingbioskop': {
             let res = await fetchJson(api('zenz', '/webzone/nowplayingbioskop', {}, 'apikey'))
             let capt = `Now Playing Bioskop\n\n`
             for (let i of res.result){
@@ -2691,7 +2709,7 @@ let capt = `➣ Title: Update Gempa Terkini di Indonesia\n\n
             }
             hisoka.sendImage(m.chat, res.result[0].img, capt, m)
             }
-            break
+            break */
              case 'gempa': case 'infogempa': {
             let res = await fetchJson(api('zenz', '/information/bmkg/gempa', {}, 'apikey'))
             let capt = `Update Gempa Terkini di Indonesia\n\n`
@@ -2711,7 +2729,7 @@ let capt = `➣ Title: Update Gempa Terkini di Indonesia\n\n
             hisoka.sendImage(m.chat, res.result.shakemap, capt, m)
             }
             break
-            case 'aminio': {
+            /** case 'aminio': {
             if (!text) throw `Example: ${prefix + command} free fire`
             let res = await fetchJson(api('zenz', '/webzone/amino', { query: text }, 'apikey'))
             let capt = `Amino Search From : ${text}\n\n`
@@ -2724,8 +2742,8 @@ let capt = `➣ Title: Update Gempa Terkini di Indonesia\n\n
             }
             hisoka.sendImage(m.chat, 'https://'+res.result[0].community_thumb, capt, m)
             }
-            break
-            case 'wattpad': {
+            break */
+            /** case 'wattpad': {
             if (!text) throw `Example : ${prefix + command} love`
             let res = await fetchJson(api('zenz', '/webzone/wattpad', { query: text }, 'apikey'))
             let { judul, dibaca, divote, bab, waktu, url, thumb, description } = res.result[0]
@@ -2739,8 +2757,8 @@ let capt = `➣ Title: Update Gempa Terkini di Indonesia\n\n
             capt += `➣ Deskripsi: ${description}`
             hisoka.sendImage(m.chat, thumb, capt, m)
             }
-            break
-            case 'webtoons': {
+            break */
+            /** case 'webtoons': {
             if (!text) throw `Example : ${prefix + command} love`
             let res = await fetchJson(api('zenz', '/webzone/webtoons', { query: text }, 'apikey'))
             let capt = `Webtoons Search From : ${text}\n\n`
@@ -2753,8 +2771,8 @@ let capt = `➣ Title: Update Gempa Terkini di Indonesia\n\n
             }
             m.reply(capt)
             }
-            break
-            case 'drakor': {
+            break */
+            /** case 'drakor': {
             if (!text) throw `Example : ${prefix + command} love`
             let res = await fetchJson(api('zenz', '/webzone/drakor', { query: text }, 'apikey'))
             let capt = `Drakor Search From : ${text}\n\n`
@@ -2767,51 +2785,8 @@ let capt = `➣ Title: Update Gempa Terkini di Indonesia\n\n
             }
             hisoka.sendImage(m.chat, res.result[0].thumbnail, capt, m)
             }
-            break
-            case 'setmenu': {
-            if (!isCreator) throw mess.owner
-            let setbot = db.data.settings[botNumber]
-               if (args[0] === 'templateImage'){
-                setbot.templateImage = true
-                setbot.templateVideo = false
-                setbot.templateGif = false
-                setbot.templateMsg = false
-                m.reply(mess.success)
-                } else if (args[0] === 'templateVideo'){
-                setbot.templateImage = false
-                setbot.templateVideo = true
-                setbot.templateGif = false
-                setbot.templateMsg = false
-                m.reply(mess.success)
-                } else if (args[0] === 'templateGif'){
-                setbot.templateImage = false
-                setbot.templateVideo = false
-                setbot.templateGif = true
-                setbot.templateMsg = false
-                m.reply(mess.success)
-                } else if (args[0] === 'templateMessage'){
-                setbot.templateImage = false
-                setbot.templateVideo = false
-                setbot.templateGif = false
-                setbot.templateMsg = true
-                m.reply(mess.success)
-                } else {
-                let sections = [
-                {
-                title: "CHANGE MENU BOT",
-                rows: [
-                {title: "Template Image", rowId: `setmenu templateImage`, description: `Change menu bot to Template Image`},
-                {title: "Template Video", rowId: `setmenu templateVideo`, description: `Change menu bot to Template Video`},
-                {title: "Template Gif", rowId: `setmenu templateGif`, description: `Change menu bot to Template Gif`},
-                {title: "Template Message", rowId: `setmenu templateMessage`, description: `Change menu bot to Template Message`}
-                ]
-                },
-                ]
-                hisoka.sendListMsg(m.chat, `Please select the menu you want to change!`, hisoka.user.name, `Hello Owner !`, `Click Here`, sections, m)
-                }
-            }
-            break
-            case 'list': case 'menu': case 'help': case '?': {
+            break */
+            /** case 'list': case 'menu': case 'help': case '?': {
                 anu = `*Hai Kak ${m.pushName}👋🏻*\nBerikut daftar list menu bot\nGunakan dengan bijak yaaa...\n\n┌──⭓ *Group Menu*
 │
 │➣ ${prefix}linkgroup
@@ -2821,14 +2796,14 @@ let capt = `➣ Title: Update Gempa Terkini di Indonesia\n\n
 │➣ ${prefix}setdesc [text]
 │➣ ${prefix}group [option]
 │➣ ${prefix}editinfo [option]
-│➣ ${prefix}add @user
-│➣ ${prefix}kick @user
+│➣ ${prefix}add user
+│➣ ${prefix}kick user
 │➣ ${prefix}hidetag [text]
 │➣ ${prefix}tagall [text]
 │➣ ${prefix}antilink [on/off]
 │➣ ${prefix}mute [on/off]
-│➣ ${prefix}promote @user
-│➣ ${prefix}demote @user
+│➣ ${prefix}promote user
+│➣ ${prefix}demote user
 │➣ ${prefix}vote [text]
 │➣ ${prefix}devote
 │➣ ${prefix}upvote
@@ -3128,8 +3103,8 @@ let capt = `➣ Title: Update Gempa Terkini di Indonesia\n\n
 │➣ ${prefix}chat [option]
 │➣ ${prefix}join [link]
 │➣ ${prefix}leave
-│➣ ${prefix}block @user
-│➣ ${prefix}unblock @user
+│➣ ${prefix}block user
+│➣ ${prefix}unblock user
 │➣ ${prefix}bcgroup [text]
 │➣ ${prefix}bcall [text]
 │➣ ${prefix}setppbot [image]
@@ -3160,6 +3135,89 @@ let capt = `➣ Title: Update Gempa Terkini di Indonesia\n\n
                             }, {
                                 quickReplyButton: {
                                     displayText: 'Contact Owner',
+                                    id: 'owner'
+                                }
+                            }]
+                         let setbot = db.data.settings[botNumber]
+                        if (setbot.templateImage) {
+                        hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
+                        } else if (setbot.templateGif) {
+                        hisoka.send5ButGif(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateVid) {
+                        hisoka.send5ButVid(m.chat, anu, hisoka.user.name, global.visoka, btn)
+                        } else if (setbot.templateMsg) {
+                        hisoka.send5ButMsg(m.chat, anu, hisoka.user.name, btn)
+                        }
+                     }
+            break */
+            case 'setmenu': {
+            if (!isCreator) throw mess.owner
+            let setbot = db.data.settings[botNumber]
+               if (args[0] === 'templateImage'){
+                setbot.templateImage = true
+                setbot.templateVideo = false
+                setbot.templateGif = false
+                setbot.templateMsg = false
+                m.reply(mess.success)
+                } else if (args[0] === 'templateVideo'){
+                setbot.templateImage = false
+                setbot.templateVideo = true
+                setbot.templateGif = false
+                setbot.templateMsg = false
+                m.reply(mess.success)
+                } else if (args[0] === 'templateGif'){
+                setbot.templateImage = false
+                setbot.templateVideo = false
+                setbot.templateGif = true
+                setbot.templateMsg = false
+                m.reply(mess.success)
+                } else if (args[0] === 'templateMessage'){
+                setbot.templateImage = false
+                setbot.templateVideo = false
+                setbot.templateGif = false
+                setbot.templateMsg = true
+                m.reply(mess.success)
+                } else {
+                let sections = [
+                {
+                title: "CHANGE MENU BOT",
+                rows: [
+                {title: "Template Image", rowId: `setmenu templateImage`, description: `Change menu bot to Template Image`},
+                {title: "Template Video", rowId: `setmenu templateVideo`, description: `Change menu bot to Template Video`},
+                {title: "Template Gif", rowId: `setmenu templateGif`, description: `Change menu bot to Template Gif`},
+                {title: "Template Message", rowId: `setmenu templateMessage`, description: `Change menu bot to Template Message`}
+                ]
+                },
+                ]
+                hisoka.sendListMsg(m.chat, `Please select the menu you want to change!`, hisoka.user.name, `Hello Owner !`, `Click Here`, sections, m)
+                }
+            }
+            break
+            case 'list': case 'menu': case 'help': case '?': {
+                anu = `*Halo Kak ${m.pushName}👋🏻*\n\n*Perkenalkan saya Bot Resmi The Emeralda Resort*\n*Bot ini masih dalam masa percobaan (versi beta)*\nGunakan dengan bijak yaaa...\n\n\n*Jika ada yang ingin ditanyakan, bila langsung klik tombol admin dibawah*\nTerimakasih 🙏🏻😊`
+                let btn = [{
+                                urlButton: {
+                                    displayText: 'Join Member',
+                                    url: 'https://yanprolandclub.com/yanpro-reseller/'
+                                }
+                            }, {
+                                urlButton: {
+                                    displayText: 'Daftar Landing Page',
+                                    url: 'https://emeralda.launchproperty.net/daftarlandingpage'
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Benefit YLC',
+                                    id: 'benefit'
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Tentang Bot',
+                                    id: 'menu'
+                                }  
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Nomor Admin',
                                     id: 'owner'
                                 }
                             }]
