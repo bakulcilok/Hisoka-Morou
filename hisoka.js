@@ -1149,13 +1149,13 @@ break */
                     await sleep(1500)
                     let btn = [{
                                 urlButton: {
-                                    displayText: 'Link Marketing Kit',
-                                    url: 'https://t.me/marketingkitemeraldaresort'
+                                    displayText: 'Daftar Training YLC',
+                                    url: 'https://bit.ly/training-ylc'
                                 }
                             }, {
                                 urlButton: {
-                                    displayText: 'Daftar Landing Page',
-                                    url: 'https://emeralda.launchproperty.net/daftarlandingpage'
+                                    displayText: 'Link Marketing Kit',
+                                    url: 'https://t.me/marketingkitemeraldaresort'
                                 }
                             }, {
                                 quickReplyButton: {
@@ -1173,7 +1173,7 @@ break */
                                     id: 'owner'
                                 }
                             }]
-                      let txt = `「 Broadcast Otomatis 」\n\n${text}`
+                      let txt = `「 Broadcast Bot 」\n\n${text}`
                       hisoka.send5ButImg(i, txt, hisoka.user.name, global.thumb, btn)
                     }
                 m.reply(`Sukses Mengirim Broadcast Ke ${anu.length} Group`)
