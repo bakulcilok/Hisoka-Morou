@@ -3202,8 +3202,8 @@ let capt = `➣ Title: Update Gempa Terkini di Indonesia\n\n
                                 }
                             }, {
                                 urlButton: {
-                                    displayText: 'Daftar Landing Page',
-                                    url: 'https://emeralda.launchproperty.net/daftarlandingpage'
+                                    displayText: 'Link Marketing Kit',
+                                    url: 'https://t.me/marketingkitemeraldaresort'
                                 }
                             }, {
                                 quickReplyButton: {
